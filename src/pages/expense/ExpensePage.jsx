@@ -96,15 +96,6 @@ export default function ExpensePage() {
     }
   }, [search]);
 
-  useEffect(() => {
-    setFilterDates((prev) => ({
-      ...prev,
-      to: null,
-    }));
-    setSearch("");
-    setInputValue("");
-  }, [filterDates.from]);
-
   const handleDateRangeChange = (range) => {
     setFilterDates(range);
   };

@@ -12,11 +12,9 @@ const expenseApi = baseApi.injectEndpoints({
 
         const params = {};
         if (search?.trim()) params.search = search.trim();
-        if (category?.trim()) params.search = search.trim();
-        if (fromDate && toDate) {
-          params.fromDate = fromDate;
-          params.toDate = toDate;
-        }
+        if (category?.trim()) params.category = category.trim();
+        if (fromDate) params.fromDate = fromDate;
+        if (toDate) params.toDate = toDate;
 
         return {
           url: API_ENDPOINTS.GET_ALL_EXPENSE,

@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
-import { useEffect, useState } from "react";
-import { CalendarIcon } from "lucide-react";
-import { format, isAfter, isBefore, isSameDay, parse, isValid } from "date-fns";
+import { useState, useEffect } from "react";
+import { CalendarIcon, X } from "lucide-react";
+import { format, isAfter, isSameDay, parse, isValid } from "date-fns";
 
 import {
   Popover,
@@ -24,208 +24,192 @@ export default function CustomDateRangePicker({
     if (!date) return undefined;
     const d =
       typeof date === "string"
-        ? parse(date, "dd-MM-yyyy", new Date())
+        ? parse(date, "yyyy-MM-dd", new Date())
         : date instanceof Date
         ? date
         : undefined;
     return isValid(d) ? d : undefined;
   };
 
-  const formatDate = (date) => {
-    if (!date || !(date instanceof Date) || isNaN(date)) return undefined;
+  const formatDateForAPI = (date) => {
+    if (!date || !(date instanceof Date) || isNaN(date)) return "";
+    return format(date, "yyyy-MM-dd");
+  };
+
+  const formatDateForDisplay = (date) => {
+    if (!date || !(date instanceof Date) || isNaN(date)) return "";
     return format(date, "dd-MM-yyyy");
   };
 
-  const [dateRange, setDateRange] = useState({
+  // Track the actual committed range
+  const [committedRange, setCommittedRange] = useState({
     from: parseDate(fromDate),
     to: parseDate(toDate),
   });
 
+  // Track what's shown in calendar (for visual feedback during selection)
+  const [calendarRange, setCalendarRange] = useState({
+    from: parseDate(fromDate),
+    to: parseDate(toDate),
+  });
+
+  // Sync with props when they change externally
   useEffect(() => {
-    setDateRange({
-      from: parseDate(fromDate),
-      to: parseDate(toDate),
-    });
+    const parsedFrom = parseDate(fromDate);
+    const parsedTo = parseDate(toDate);
+    setCommittedRange({ from: parsedFrom, to: parsedTo });
+    setCalendarRange({ from: parsedFrom, to: parsedTo });
   }, [fromDate, toDate]);
 
   const handleSelect = (range) => {
-    if (!range) return;
+    console.log('onSelect called with range:', range);
+    console.log('range.from:', range?.from);
+    console.log('range.to:', range?.to);
 
     const today = new Date();
-    let from = range.from;
-    let to = range.to;
+    today.setHours(23, 59, 59, 999);
 
-    // Prevent future date selection
-    from =
-      from && (isBefore(from, today) || isSameDay(from, today))
-        ? from
-        : undefined;
-    to = to && (isBefore(to, today) || isSameDay(to, today)) ? to : undefined;
-
-    // Reset `to` if `from > to`
-    if (from && to && isAfter(from, to)) {
-      setDateRange({ from, to: undefined });
-      onChange?.({
-        from: formatDate(from),
-        to: undefined,
-      });
-    } else {
-      setDateRange({ from, to });
-      onChange?.({
-        from: formatDate(from),
-        to: formatDate(to),
-      });
+    if (!range || !range.from) {
+      setCommittedRange({ from: undefined, to: undefined });
+      setCalendarRange({ from: undefined, to: undefined });
+      onChange?.({ from: "", to: "" });
+      return;
     }
 
-    // Close popover only when both dates are valid
-    if (from && to) {
-      open.onFalse();
+    const { from, to } = range;
+
+    // Check if this is the library quirk (both dates same on first click)
+    if (from && to && isSameDay(from, to)) {
+      console.log('Library quirk: both dates are same, treating as first date selection');
+
+      // Block future dates
+      if (isAfter(from, today)) {
+        console.log('Blocked future date');
+        return;
+      }
+
+      // This is actually a first click, so only set from date
+      setCalendarRange({ from, to: undefined });
+      setCommittedRange({ from, to: undefined });
+      console.log('Set as start date only, waiting for end date');
+      return;
+    }
+
+    // Block future dates
+    if (from && isAfter(from, today)) {
+      console.log('Blocked future date (from):', from);
+      return;
+    }
+    if (to && isAfter(to, today)) {
+      console.log('Blocked future date (to):', to);
+      return;
+    }
+
+    // Always update calendar visual
+    setCalendarRange({ from, to });
+
+    // Only commit when we have a proper range (two different dates)
+    if (from && to && !isSameDay(from, to)) {
+      // Normalize: ensure from is before to
+      let normalizedFrom = from;
+      let normalizedTo = to;
+
+      if (isAfter(normalizedFrom, normalizedTo)) {
+        console.log('Normalizing range: swapping from and to');
+        normalizedFrom = to;
+        normalizedTo = from;
+      }
+
+      const finalRange = { from: normalizedFrom, to: normalizedTo };
+      setCommittedRange(finalRange);
+      setCalendarRange(finalRange);
+
+      const apiRange = {
+        from: formatDateForAPI(normalizedFrom),
+        to: formatDateForAPI(normalizedTo),
+      };
+
+      console.log('Complete range selected, calling onChange with:', apiRange);
+      onChange?.(apiRange);
+
+      // Close popover on complete selection
+      setTimeout(() => open.onFalse(), 100);
+    } else if (from && !to) {
+      // Only start date
+      setCommittedRange({ from, to: undefined });
+      console.log('Start date selected, waiting for end date');
+    }
+  };
+
+  const handleClear = () => {
+    console.log('Clear button clicked');
+    setCommittedRange({ from: undefined, to: undefined });
+    setCalendarRange({ from: undefined, to: undefined });
+    onChange?.({ from: "", to: "" });
+  };
+
+  // When opening popover, sync calendar with committed range
+  const handleOpenChange = (isOpen) => {
+    open.onToggle(isOpen);
+    if (isOpen) {
+      setCalendarRange(committedRange);
     }
   };
 
   return (
-    <div className={cn("w-full", className)}>
-      <Popover open={open.value} onOpenChange={open.onToggle}>
+    <div className={cn("w-full flex gap-2", className)}>
+      <Popover open={open.value} onOpenChange={handleOpenChange}>
         <PopoverTrigger asChild>
           <Button
             id="date-range"
             variant="outline"
             className={cn(
-              "w-full justify-start text-left font-normal",
-              !dateRange.from && "text-muted-foreground"
+              "flex-1 justify-start text-left font-normal",
+              !committedRange.from && "text-muted-foreground"
             )}
           >
             <CalendarIcon className="mr-2 h-4 w-4" />
-            {dateRange.from ? (
-              dateRange.to ? (
+            {committedRange.from ? (
+              committedRange.to ? (
                 <>
-                  {formatDate(dateRange.from)} - {formatDate(dateRange.to)}
+                  {formatDateForDisplay(committedRange.from)} - {formatDateForDisplay(committedRange.to)}
                 </>
               ) : (
-                formatDate(dateRange.from)
+                <>
+                  {formatDateForDisplay(committedRange.from)} - Select end date
+                </>
               )
             ) : (
-              <span>Select a date range</span>
+              <span>Select date range</span>
             )}
           </Button>
         </PopoverTrigger>
         <PopoverContent className="w-auto p-0" align="start">
           <Calendar
-            initialFocus
             mode="range"
-            selected={dateRange}
+            selected={calendarRange}
             onSelect={handleSelect}
             numberOfMonths={2}
-            disabled={(date) => isAfter(date, new Date())}
+            disabled={(date) => {
+              const today = new Date();
+              today.setHours(23, 59, 59, 999);
+              return isAfter(date, today);
+            }}
           />
         </PopoverContent>
       </Popover>
+
+      {(committedRange.from || committedRange.to) && (
+        <Button
+          variant="ghost"
+          size="icon"
+          onClick={handleClear}
+          className="shrink-0"
+          aria-label="Clear date selection"
+        >
+          <X className="h-4 w-4" />
+        </Button>
+      )}
     </div>
   );
 }
-
-// import { cn } from "@/lib/utils";
-// import { useEffect, useState } from "react";
-// import { CalendarIcon } from "lucide-react";
-// import { format, isAfter, isBefore, isSameDay } from "date-fns";
-
-// import {
-//   Popover,
-//   PopoverContent,
-//   PopoverTrigger,
-// } from "@/components/ui/popover";
-// import { Button } from "@/components/ui/button";
-// import { Calendar } from "@/components/ui/calendar";
-
-// import { useBoolean } from "@/hooks";
-
-// export default function CustomDateRangePicker({
-//   fromDate,
-//   toDate,
-//   onChange,
-//   className,
-// }) {
-//   console.log(fromDate);
-//   console.log(toDate);
-//   const open = useBoolean();
-
-//   const parseDate = (date) =>
-//     typeof date === "string" ? new Date(date) : date;
-
-//   const [dateRange, setDateRange] = useState({
-//     from: parseDate(fromDate) || undefined,
-//     to: parseDate(toDate) || undefined,
-//   });
-
-//   console.log("dateRange", dateRange);
-
-//   const formatDate = (date) => (date ? format(date, "dd-MM-yyyy") : undefined);
-
-//   const handleSelect = (range) => {
-//     if (!range) return;
-//     const { from, to } = range;
-
-//     const today = new Date();
-//     const validTo =
-//       to && (isBefore(to, today) || isSameDay(to, today)) ? to : undefined;
-//     const validFrom =
-//       from && (isBefore(from, today) || isSameDay(from, today))
-//         ? from
-//         : undefined;
-
-//     if (validFrom && validTo && isAfter(validFrom, validTo)) {
-//       setDateRange({ from: validFrom, to: undefined });
-//       onChange?.({ from: formatDate(validFrom), to: undefined });
-//     } else {
-//       setDateRange({ from: validFrom, to: validTo });
-//       onChange?.({
-//         from: formatDate(validFrom),
-//         to: formatDate(validTo),
-//       });
-//     }
-
-//     if (validFrom && validTo) {
-//       open.onFalse();
-//     }
-//   };
-
-//   return (
-//     <div className={cn("w-full", className)}>
-//       <Popover open={open.value} onOpenChange={open.onToggle}>
-//         <PopoverTrigger asChild>
-//           <Button
-//             id="date-range"
-//             variant="outline"
-//             className={cn(
-//               "w-full justify-start text-left font-normal",
-//               !dateRange.from && "text-muted-foreground"
-//             )}
-//           >
-//             <CalendarIcon className="mr-2 h-4 w-4" />
-//             {dateRange.from ? (
-//               dateRange.to ? (
-//                 <>
-//                   {formatDate(dateRange.from)} - {formatDate(dateRange.to)}
-//                 </>
-//               ) : (
-//                 formatDate(dateRange.from)
-//               )
-//             ) : (
-//               <span>Select a date range</span>
-//             )}
-//           </Button>
-//         </PopoverTrigger>
-//         <PopoverContent className="w-auto p-0" align="start">
-//           <Calendar
-//             initialFocus
-//             mode="range"
-//             selected={dateRange}
-//             onSelect={handleSelect}
-//             numberOfMonths={2}
-//             disabled={(date) => isAfter(date, new Date())}
-//           />
-//         </PopoverContent>
-//       </Popover>
-//     </div>
-//   );
-// }
