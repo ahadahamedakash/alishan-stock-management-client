@@ -34,7 +34,7 @@ const ProductSchema = Yup.object().shape({
     .notRequired()
     .matches(
       /^$|^01[0-9]{9}$/,
-      "Phone number must be a valid 11-digit Bangladeshi number"
+      "Phone number must be a valid 11-digit Bangladeshi number",
     )
     .required("Phone is required"),
 
@@ -100,7 +100,7 @@ export default function InvoiceForm() {
 
   useEffect(() => {
     const selectedCustomer = customerOptions.find(
-      (c) => c.value === selectedCustomerId
+      (c) => c.value === selectedCustomerId,
     );
     if (selectedCustomer) {
       setValue("phone", selectedCustomer.phone || "");
@@ -166,7 +166,7 @@ export default function InvoiceForm() {
       toast.error(
         availableToAdd <= 0
           ? `You’ve already added the maximum available quantity for "${product.name}".`
-          : `Only ${availableToAdd} more item(s) available for "${product.name}".`
+          : `Only ${availableToAdd} more item(s) available for "${product.name}".`,
       );
       return;
     }
@@ -180,7 +180,7 @@ export default function InvoiceForm() {
               quantity: item.quantity + requestedQty,
               total: (item.quantity + requestedQty) * product.price,
             }
-          : item
+          : item,
       );
       setItems(updatedItems);
     } else {
@@ -239,14 +239,14 @@ export default function InvoiceForm() {
 
       const result = await createInvoice(payload).unwrap();
 
-      console.log("result: ", result);
+      // console.log("result: ", result);
 
       if (result.success) {
         toast.success(
           result.message ||
             (isEdit
               ? "Invoice updated successfully"
-              : "Invoice added successfully")
+              : "Invoice added successfully"),
         );
 
         setItems([]);

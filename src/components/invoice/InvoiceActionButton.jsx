@@ -6,10 +6,6 @@ import { Button } from "@/components/ui/button";
 import InvoicePDF from "@/pages/invoice/InvoicePDF";
 
 const InvoiceActionButtons = ({ invoiceData, onViewInvoice }) => {
-  console.log("invoiceData :", invoiceData);
-
-  console.log("onview invoice :", onViewInvoice);
-
   return (
     <div className="flex gap-3 justify-end">
       <Button variant="outline" onClick={onViewInvoice.onTrue}>

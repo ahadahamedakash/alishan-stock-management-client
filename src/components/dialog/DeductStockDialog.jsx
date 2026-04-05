@@ -39,7 +39,7 @@ export default function DeductStockDialog({ isDeductStockOpen }) {
     debounce((val) => {
       setSubmittedInvoiceNumber(val);
     }, 400),
-    []
+    [],
   );
 
   // Trigger invoice fetch on form submit
@@ -63,7 +63,7 @@ export default function DeductStockDialog({ isDeductStockOpen }) {
     { invoiceNumber: submittedInvoiceNumber },
     {
       skip: !submittedInvoiceNumber || !isDeductStockOpen.value,
-    }
+    },
   );
 
   const invoice = invoiceData?.data?.[0];
@@ -84,11 +84,11 @@ export default function DeductStockDialog({ isDeductStockOpen }) {
     setIsSubmitting(true);
 
     try {
-      const res = await deductStock({
+      const _res = await deductStock({
         invoiceNumber: submittedInvoiceNumber,
       }).unwrap();
 
-      console.log("result", res);
+      // console.log("result", res);
 
       toast.success("Stock deducted successfully.");
 
@@ -212,7 +212,7 @@ export default function DeductStockDialog({ isDeductStockOpen }) {
                   <tbody>
                     {invoice?.products?.map((prod, index) => {
                       const productInfo = productData?.data?.find(
-                        (p) => p._id === prod.productId
+                        (p) => p._id === prod.productId,
                       );
 
                       return (
@@ -245,8 +245,8 @@ export default function DeductStockDialog({ isDeductStockOpen }) {
                 {isProductLoading
                   ? "Loading Products..."
                   : isSubmitting
-                  ? "Submitting..."
-                  : "Confirm Stock Deduction"}
+                    ? "Submitting..."
+                    : "Confirm Stock Deduction"}
               </Button>
             </div>
           </div>

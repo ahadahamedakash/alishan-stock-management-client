@@ -26,8 +26,8 @@ export default function CustomDateRangePicker({
       typeof date === "string"
         ? parse(date, "yyyy-MM-dd", new Date())
         : date instanceof Date
-        ? date
-        : undefined;
+          ? date
+          : undefined;
     return isValid(d) ? d : undefined;
   };
 
@@ -62,10 +62,6 @@ export default function CustomDateRangePicker({
   }, [fromDate, toDate]);
 
   const handleSelect = (range) => {
-    console.log('onSelect called with range:', range);
-    console.log('range.from:', range?.from);
-    console.log('range.to:', range?.to);
-
     const today = new Date();
     today.setHours(23, 59, 59, 999);
 
@@ -80,28 +76,23 @@ export default function CustomDateRangePicker({
 
     // Check if this is the library quirk (both dates same on first click)
     if (from && to && isSameDay(from, to)) {
-      console.log('Library quirk: both dates are same, treating as first date selection');
-
       // Block future dates
       if (isAfter(from, today)) {
-        console.log('Blocked future date');
         return;
       }
 
       // This is actually a first click, so only set from date
       setCalendarRange({ from, to: undefined });
       setCommittedRange({ from, to: undefined });
-      console.log('Set as start date only, waiting for end date');
+
       return;
     }
 
     // Block future dates
     if (from && isAfter(from, today)) {
-      console.log('Blocked future date (from):', from);
       return;
     }
     if (to && isAfter(to, today)) {
-      console.log('Blocked future date (to):', to);
       return;
     }
 
@@ -115,7 +106,6 @@ export default function CustomDateRangePicker({
       let normalizedTo = to;
 
       if (isAfter(normalizedFrom, normalizedTo)) {
-        console.log('Normalizing range: swapping from and to');
         normalizedFrom = to;
         normalizedTo = from;
       }
@@ -129,7 +119,6 @@ export default function CustomDateRangePicker({
         to: formatDateForAPI(normalizedTo),
       };
 
-      console.log('Complete range selected, calling onChange with:', apiRange);
       onChange?.(apiRange);
 
       // Close popover on complete selection
@@ -137,12 +126,10 @@ export default function CustomDateRangePicker({
     } else if (from && !to) {
       // Only start date
       setCommittedRange({ from, to: undefined });
-      console.log('Start date selected, waiting for end date');
     }
   };
 
   const handleClear = () => {
-    console.log('Clear button clicked');
     setCommittedRange({ from: undefined, to: undefined });
     setCalendarRange({ from: undefined, to: undefined });
     onChange?.({ from: "", to: "" });
@@ -165,14 +152,15 @@ export default function CustomDateRangePicker({
             variant="outline"
             className={cn(
               "flex-1 justify-start text-left font-normal",
-              !committedRange.from && "text-muted-foreground"
+              !committedRange.from && "text-muted-foreground",
             )}
           >
             <CalendarIcon className="mr-2 h-4 w-4" />
             {committedRange.from ? (
               committedRange.to ? (
                 <>
-                  {formatDateForDisplay(committedRange.from)} - {formatDateForDisplay(committedRange.to)}
+                  {formatDateForDisplay(committedRange.from)} -{" "}
+                  {formatDateForDisplay(committedRange.to)}
                 </>
               ) : (
                 <>

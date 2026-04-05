@@ -79,10 +79,10 @@ export default function CollectionDialog({ collectionDialog }) {
     try {
       await new Promise((resolve) => setTimeout(resolve, 500));
 
-      console.log("FORM DATA: ", data);
+      // console.log("FORM DATA: ", data);
 
       const result = await addCollection(data).unwrap();
-      console.log("result: ", result);
+      // console.log("result: ", result);
 
       if (result.success) {
         toast.success(result.message || "Collection added successfully");

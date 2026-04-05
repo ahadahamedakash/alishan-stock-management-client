@@ -3,17 +3,13 @@ import { Loader2 } from "lucide-react";
 import { useThemeContext } from "../theme/ThemeProvider";
 
 const PDFViewer = lazy(() =>
-  import("@react-pdf/renderer").then((mod) => ({ default: mod.PDFViewer }))
+  import("@react-pdf/renderer").then((mod) => ({ default: mod.PDFViewer })),
 );
 
 const InvoicePDF = lazy(() => import("@/pages/invoice/InvoicePDF"));
 
 export default function InvoicePDFModal({ onClose, invoiceData }) {
   const { primaryColor } = useThemeContext();
-
-  console.log(onClose);
-
-  console.log("invoiceData: ", invoiceData);
 
   return (
     <div className="fixed inset-0 z-50 bg-black bg-opacity-70 flex flex-col items-center justify-center p-4">
