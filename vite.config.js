@@ -18,16 +18,29 @@ export default defineConfig({
     },
   },
   build: {
-    chunkSizeWarningLimit: 500,
+    chunkSizeWarningLimit: 1000,
     rollupOptions: {
       output: {
         manualChunks: {
-          react: ["react", "react-dom"],
-          redux: ["@reduxjs/toolkit", "react-redux"],
-          router: ["react-router-dom"],
-          pdf: ["@react-pdf/renderer"],
-          charts: ["recharts"],
-          icons: ["lucide-react"],
+          // Core framework vendors
+          "react-vendor": ["react", "react-dom"],
+          "redux-vendor": ["@reduxjs/toolkit", "react-redux", "redux-persist"],
+          "router-vendor": ["react-router", "react-router-dom"],
+
+          // Heavy library vendors (lazy loaded)
+          "pdf-vendor": ["@react-pdf/renderer"],
+          "charts-vendor": ["recharts"],
+          "date-picker-vendor": ["react-day-picker"],
+
+          // UI component vendors
+          "ui-vendor": ["@radix-ui/react-dialog", "@radix-ui/react-dropdown-menu",
+                        "@radix-ui/react-label", "@radix-ui/react-popover",
+                        "@radix-ui/react-scroll-area", "@radix-ui/react-select",
+                        "@radix-ui/react-slot", "@radix-ui/react-tabs"],
+
+          // Utility vendors
+          "utils-vendor": ["lucide-react", "clsx", "class-variance-authority",
+                          "tailwind-merge", "date-fns"],
         },
       },
     },

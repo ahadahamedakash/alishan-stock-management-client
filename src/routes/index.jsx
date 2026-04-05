@@ -1,12 +1,27 @@
 import { lazy, Suspense } from "react";
 import { createBrowserRouter } from "react-router";
+import { Loader2 } from "lucide-react";
 
 import Login from "@/pages/Login";
 import DashboardLayout from "@/layouts/DashboardLayout";
 import ProtectedRoute from "@/components/auth/ProtectedRoute";
 import RoleBasedRoute from "@/components/auth/RoleBasedRoute";
 
-// ANALYTICS PAGES
+// Loading component
+function PageLoader() {
+  return (
+    <div className="flex items-center justify-center min-h-screen">
+      <Loader2 className="w-8 h-8 animate-spin text-primary" />
+    </div>
+  );
+}
+
+// Wrapper for lazy loaded components
+function LazyPage({ children }) {
+  return <Suspense fallback={<PageLoader />}>{children}</Suspense>;
+}
+
+// ANALYTICS PAGES (heavy - includes charts)
 const Analytics = lazy(() => import("@/pages/Analytics"));
 
 // PRODUCT PAGES
@@ -18,7 +33,7 @@ const CustomerForm = lazy(() => import("@/pages/customer/CustomerForm"));
 const CustomersPage = lazy(() => import("@/pages/customer/CustomersPage"));
 const CustomerDetails = lazy(() => import("@/pages/customer/CustomerDetails"));
 
-// INVOICE PAGES
+// INVOICE PAGES (heavy - includes PDF)
 const InvoiceForm = lazy(() => import("@/pages/invoice/InvoiceForm"));
 const InvoicePage = lazy(() => import("@/pages/invoice/InvoicePage"));
 const InvoiceDetails = lazy(() => import("@/pages/invoice/InvoiceDetails"));
@@ -52,11 +67,9 @@ export const router = createBrowserRouter([
   {
     path: "/",
     element: (
-      <Suspense>
-        <ProtectedRoute>
-          <DashboardLayout />
-        </ProtectedRoute>
-      </Suspense>
+      <ProtectedRoute>
+        <DashboardLayout />
+      </ProtectedRoute>
     ),
     children: [
       {
@@ -64,7 +77,9 @@ export const router = createBrowserRouter([
         element: (
           <ProtectedRoute>
             <RoleBasedRoute allowedRoles={["admin", "super_admin"]}>
-              <Analytics />
+              <LazyPage>
+                <Analytics />
+              </LazyPage>
             </RoleBasedRoute>
           </ProtectedRoute>
         ),
@@ -82,7 +97,9 @@ export const router = createBrowserRouter([
                 "stock_manager",
               ]}
             >
-              <ProductsPage />
+              <LazyPage>
+                <ProductsPage />
+              </LazyPage>
             </RoleBasedRoute>
           </ProtectedRoute>
         ),
@@ -92,7 +109,9 @@ export const router = createBrowserRouter([
         element: (
           <ProtectedRoute>
             <RoleBasedRoute allowedRoles={["admin", "super_admin"]}>
-              <ProductForm />
+              <LazyPage>
+                <ProductForm />
+              </LazyPage>
             </RoleBasedRoute>
           </ProtectedRoute>
         ),
@@ -102,7 +121,9 @@ export const router = createBrowserRouter([
         element: (
           <ProtectedRoute>
             <RoleBasedRoute allowedRoles={["admin", "super_admin"]}>
-              <ProductForm />
+              <LazyPage>
+                <ProductForm />
+              </LazyPage>
             </RoleBasedRoute>
           </ProtectedRoute>
         ),
@@ -113,7 +134,9 @@ export const router = createBrowserRouter([
         element: (
           <ProtectedRoute>
             <RoleBasedRoute allowedRoles={["admin", "super_admin"]}>
-              <UsersPage />
+              <LazyPage>
+                <UsersPage />
+              </LazyPage>
             </RoleBasedRoute>
           </ProtectedRoute>
         ),
@@ -123,7 +146,9 @@ export const router = createBrowserRouter([
         element: (
           <ProtectedRoute>
             <RoleBasedRoute allowedRoles={["admin", "super_admin"]}>
-              <UserForm mode="create" />
+              <LazyPage>
+                <UserForm mode="create" />
+              </LazyPage>
             </RoleBasedRoute>
           </ProtectedRoute>
         ),
@@ -133,7 +158,9 @@ export const router = createBrowserRouter([
         element: (
           <ProtectedRoute>
             <RoleBasedRoute allowedRoles={["admin", "super_admin"]}>
-              <UserForm mode="edit" />
+              <LazyPage>
+                <UserForm mode="edit" />
+              </LazyPage>
             </RoleBasedRoute>
           </ProtectedRoute>
         ),
@@ -146,7 +173,9 @@ export const router = createBrowserRouter([
             <RoleBasedRoute
               allowedRoles={["admin", "super_admin", "accountant"]}
             >
-              <CustomersPage />
+              <LazyPage>
+                <CustomersPage />
+              </LazyPage>
             </RoleBasedRoute>
           </ProtectedRoute>
         ),
@@ -158,7 +187,9 @@ export const router = createBrowserRouter([
             <RoleBasedRoute
               allowedRoles={["admin", "super_admin", "accountant"]}
             >
-              <CustomerForm />
+              <LazyPage>
+                <CustomerForm />
+              </LazyPage>
             </RoleBasedRoute>
           </ProtectedRoute>
         ),
@@ -170,7 +201,9 @@ export const router = createBrowserRouter([
             <RoleBasedRoute
               allowedRoles={["admin", "super_admin", "accountant"]}
             >
-              <CustomerForm />
+              <LazyPage>
+                <CustomerForm />
+              </LazyPage>
             </RoleBasedRoute>
           </ProtectedRoute>
         ),
@@ -182,7 +215,9 @@ export const router = createBrowserRouter([
             <RoleBasedRoute
               allowedRoles={["admin", "super_admin", "accountant"]}
             >
-              <CustomerDetails />
+              <LazyPage>
+                <CustomerDetails />
+              </LazyPage>
             </RoleBasedRoute>
           </ProtectedRoute>
         ),
@@ -195,7 +230,9 @@ export const router = createBrowserRouter([
             <RoleBasedRoute
               allowedRoles={["admin", "super_admin", "accountant"]}
             >
-              <ExpensePage />
+              <LazyPage>
+                <ExpensePage />
+              </LazyPage>
             </RoleBasedRoute>
           </ProtectedRoute>
         ),
@@ -207,7 +244,9 @@ export const router = createBrowserRouter([
             <RoleBasedRoute
               allowedRoles={["admin", "super_admin", "accountant"]}
             >
-              <ExpenseForm />
+              <LazyPage>
+                <ExpenseForm />
+              </LazyPage>
             </RoleBasedRoute>
           </ProtectedRoute>
         ),
@@ -220,7 +259,9 @@ export const router = createBrowserRouter([
             <RoleBasedRoute
               allowedRoles={["admin", "super_admin", "accountant"]}
             >
-              <EmployeePage />
+              <LazyPage>
+                <EmployeePage />
+              </LazyPage>
             </RoleBasedRoute>
           </ProtectedRoute>
         ),
@@ -230,7 +271,9 @@ export const router = createBrowserRouter([
         element: (
           <ProtectedRoute>
             <RoleBasedRoute allowedRoles={["admin", "super_admin"]}>
-              <EmployeeForm />
+              <LazyPage>
+                <EmployeeForm />
+              </LazyPage>
             </RoleBasedRoute>
           </ProtectedRoute>
         ),
@@ -240,7 +283,9 @@ export const router = createBrowserRouter([
         element: (
           <ProtectedRoute>
             <RoleBasedRoute allowedRoles={["admin", "super_admin"]}>
-              <EmployeeForm />
+              <LazyPage>
+                <EmployeeForm />
+              </LazyPage>
             </RoleBasedRoute>
           </ProtectedRoute>
         ),
@@ -252,7 +297,9 @@ export const router = createBrowserRouter([
             <RoleBasedRoute
               allowedRoles={["admin", "super_admin", "accountant"]}
             >
-              <EmployeeDetails />
+              <LazyPage>
+                <EmployeeDetails />
+              </LazyPage>
             </RoleBasedRoute>
           </ProtectedRoute>
         ),
@@ -265,7 +312,9 @@ export const router = createBrowserRouter([
             <RoleBasedRoute
               allowedRoles={["admin", "super_admin", "accountant"]}
             >
-              <InvoicePage />
+              <LazyPage>
+                <InvoicePage />
+              </LazyPage>
             </RoleBasedRoute>
           </ProtectedRoute>
         ),
@@ -277,7 +326,9 @@ export const router = createBrowserRouter([
             <RoleBasedRoute
               allowedRoles={["admin", "super_admin", "accountant"]}
             >
-              <InvoiceForm />
+              <LazyPage>
+                <InvoiceForm />
+              </LazyPage>
             </RoleBasedRoute>
           </ProtectedRoute>
         ),
@@ -290,7 +341,9 @@ export const router = createBrowserRouter([
             <RoleBasedRoute
               allowedRoles={["admin", "super_admin", "stock_manager"]}
             >
-              <StockPage />
+              <LazyPage>
+                <StockPage />
+              </LazyPage>
             </RoleBasedRoute>
           </ProtectedRoute>
         ),
@@ -303,7 +356,9 @@ export const router = createBrowserRouter([
             <RoleBasedRoute
               allowedRoles={["admin", "super_admin", "accountant"]}
             >
-              <InvoiceDetails />
+              <LazyPage>
+                <InvoiceDetails />
+              </LazyPage>
             </RoleBasedRoute>
           </ProtectedRoute>
         ),
@@ -315,7 +370,9 @@ export const router = createBrowserRouter([
             <RoleBasedRoute
               allowedRoles={["admin", "super_admin", "accountant"]}
             >
-              <InvoiceDetails />
+              <LazyPage>
+                <InvoiceDetails />
+              </LazyPage>
             </RoleBasedRoute>
           </ProtectedRoute>
         ),
@@ -328,7 +385,9 @@ export const router = createBrowserRouter([
             <RoleBasedRoute
               allowedRoles={["admin", "super_admin", "accountant"]}
             >
-              <CollectionPage />
+              <LazyPage>
+                <CollectionPage />
+              </LazyPage>
             </RoleBasedRoute>
           </ProtectedRoute>
         ),
@@ -346,7 +405,9 @@ export const router = createBrowserRouter([
                 "stock_manager",
               ]}
             >
-              <ProfilePage />
+              <LazyPage>
+                <ProfilePage />
+              </LazyPage>
             </RoleBasedRoute>
           </ProtectedRoute>
         ),
@@ -354,7 +415,11 @@ export const router = createBrowserRouter([
       // UNAUTHORIZED ROUTE
       {
         path: "unauthorized",
-        element: <Unauthorized />,
+        element: (
+          <LazyPage>
+            <Unauthorized />
+          </LazyPage>
+        ),
       },
     ],
   },

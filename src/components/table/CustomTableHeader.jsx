@@ -8,12 +8,14 @@ export function CustomTableHeader({ columns }) {
         {[...columns, { key: "actions", label: "" }].map((col) => (
           <TableHead
             key={col.key}
+            scope="col"
             className={cn(
               "text-base",
               col.align === "center" && "text-center",
               col.align === "right" && "text-right",
               col.align === "left" && "text-left"
             )}
+            aria-sort={col.sortable ? "none" : undefined}
           >
             {col.label}
           </TableHead>

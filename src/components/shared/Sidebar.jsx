@@ -25,61 +25,61 @@ import { Button } from "@/components/ui/button";
 const navItems = [
   {
     label: "Analytics",
-    icon: <BarChart3 className="h-5 w-5" />,
+    icon: <BarChart3 className="h-5 w-5" aria-hidden="true" />,
     path: "/",
     role: ["super_admin", "admin"],
   },
   {
     label: "Products",
-    icon: <ShoppingBag className="h-5 w-5" />,
+    icon: <ShoppingBag className="h-5 w-5" aria-hidden="true" />,
     path: "/products",
     role: ["super_admin", "admin", "accountant", "stock_manager"],
   },
   {
     label: "Customers",
-    icon: <Users className="h-5 w-5" />,
+    icon: <Users className="h-5 w-5" aria-hidden="true" />,
     path: "/customers",
     role: ["super_admin", "admin", "accountant"],
   },
   {
     label: "Invoices",
-    icon: <FileText className="h-5 w-5" />,
+    icon: <FileText className="h-5 w-5" aria-hidden="true" />,
     path: "/invoices",
     role: ["super_admin", "admin", "accountant"],
   },
   {
     label: "Collections",
-    icon: <HandCoins className="h-5 w-5" />,
+    icon: <HandCoins className="h-5 w-5" aria-hidden="true" />,
     path: "/collections",
     role: ["super_admin", "admin", "accountant"],
   },
   {
     label: "Stocks",
-    icon: <PackageSearch className="h-5 w-5" />,
+    icon: <PackageSearch className="h-5 w-5" aria-hidden="true" />,
     path: "/stocks",
     role: ["super_admin", "admin", "stock_manager"],
   },
   {
     label: "Expenses",
-    icon: <Receipt className="h-5 w-5" />,
+    icon: <Receipt className="h-5 w-5" aria-hidden="true" />,
     path: "/expenses",
     role: ["super_admin", "admin", "accountant"],
   },
   {
     label: "Users",
-    icon: <Users className="h-5 w-5" />,
+    icon: <Users className="h-5 w-5" aria-hidden="true" />,
     path: "/users",
     role: ["super_admin", "admin"],
   },
   {
     label: "Employees",
-    icon: <UserRoundCheck className="h-5 w-5" />,
+    icon: <UserRoundCheck className="h-5 w-5" aria-hidden="true" />,
     path: "/employees",
     role: ["super_admin", "admin", "accountant"],
   },
   {
     label: "Profile",
-    icon: <UserRoundCog className="h-5 w-5" />,
+    icon: <UserRoundCog className="h-5 w-5" aria-hidden="true" />,
     path: "/profile",
     role: ["super_admin", "admin", "accountant", "stock_manager"],
   },
@@ -128,18 +128,22 @@ export function Sidebar({ userData }) {
           variant="outline"
           size="icon"
           onClick={() => setIsMobileOpen(!isMobileOpen)}
+          aria-expanded={isMobileOpen}
+          aria-label="Toggle navigation menu"
+          aria-controls="sidebar-navigation"
           className="bg-background/50 backdrop-blur-lg border border-border/50"
         >
           {isMobileOpen ? (
-            <X className="h-5 w-5" />
+            <X className="h-5 w-5" aria-hidden="true" />
           ) : (
-            <Menu className="h-5 w-5" />
+            <Menu className="h-5 w-5" aria-hidden="true" />
           )}
         </Button>
       </div>
 
       {/* Sidebar */}
       <aside
+        id="sidebar-navigation"
         className={cn(
           "fixed top-0 left-0 z-40 h-screen transition-all duration-300 ease-in-out",
           "bg-black/10 dark:bg-white/5 backdrop-blur-lg",
@@ -148,12 +152,13 @@ export function Sidebar({ userData }) {
           "md:translate-x-0",
           isMobileOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
         )}
+        aria-label="Main navigation"
       >
         <div className="flex flex-col h-full relative">
           {/* Logo */}
           <div className={cn("p-6", isCollapsed && "p-6")}>
             <div className="flex items-center gap-2">
-              <img src="/logo.png" className="w-12" />
+              <img src="/logo.png" className="w-12" alt="Alishan Logo" />
               {!isCollapsed && (
                 <h3 className="text-xl font-bold text-[#B38A2D]">Alishan</h3>
               )}
@@ -164,31 +169,36 @@ export function Sidebar({ userData }) {
           <Button
             variant="collapse"
             onClick={() => setIsCollapsed(!isCollapsed)}
+            aria-label={isCollapsed ? "Expand sidebar" : "Collapse sidebar"}
+            aria-pressed={isCollapsed}
             className="absolute -right-5 top-12 rounded-full hidden md:block"
           >
             {isCollapsed ? (
               <ChevronRight
                 className="h-8 w-8"
                 style={{ color: primaryColor }}
+                aria-hidden="true"
               />
             ) : (
               <ChevronLeft
                 className="h-8 w-8"
                 style={{ color: primaryColor }}
+                aria-hidden="true"
               />
             )}
           </Button>
 
           {/* Navigation */}
-          <nav className="flex-1 py-4">
-            <ul className="space-y-1">
+          <nav aria-label="Primary navigation" className="flex-1 py-4">
+            <ul role="list" className="space-y-1">
               {accessibleNavItems.map((item) => (
-                <li key={item.label} className="">
+                <li key={item.label} role="listitem" className="">
                   <button
                     onClick={() => {
                       navigate(item.path);
                       setIsMobileOpen(false);
                     }}
+                    aria-current={location?.pathname === item.path ? "page" : undefined}
                     className={cn(
                       "flex items-center w-full py-3 group",
                       "transition-all duration-200 ease-in-out",
