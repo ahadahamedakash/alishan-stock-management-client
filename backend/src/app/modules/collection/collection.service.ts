@@ -3,6 +3,14 @@ import { ICollection } from "./collection.interface";
 import { Collection } from "./collection.model";
 import { Balance } from "../balance/balance.model";
 import { Customer } from "../customer/customer.model";
+import {
+  emitToRoles,
+  emitNotification,
+  SERVER_EVENTS,
+  NOTIFICATION_TYPES,
+  NOTIFICATION_PRIORITY,
+} from "../../socket";
+import { getUserName } from "../../socket/helpers";
 
 const createCollection = async (data: ICollection, issuedBy: string) => {
   try {
@@ -43,6 +51,40 @@ const createCollection = async (data: ICollection, issuedBy: string) => {
         },
       }
     );
+
+    // Emit real-time notification for collection created
+    try {
+      const userName = await getUserName(issuedBy);
+
+      const collectionData = {
+        collectionId: savedCollection._id.toString(),
+        customerId: customer._id.toString(),
+        customerName: customer.name,
+        amount,
+        paymentMethod: data.method || 'cash',
+        description: data.description,
+        createdBy: issuedBy,
+        userName,
+        timestamp: new Date(),
+      };
+
+      // Emit collection created event to admin and accountant
+      emitToRoles(['admin', 'accountant'], SERVER_EVENTS.COLLECTION_CREATED, collectionData);
+
+      // Also emit as notification
+      emitNotification(
+        ['admin', 'accountant'],
+        NOTIFICATION_TYPES.COLLECTION,
+        NOTIFICATION_PRIORITY.MEDIUM,
+        {
+          title: 'Payment Received',
+          message: `৳${amount} from ${customer.name}`,
+          details: collectionData,
+        }
+      );
+    } catch (socketError) {
+      console.error('Failed to emit socket event:', socketError);
+    }
 
     return savedCollection;
   } catch (error: unknown) {

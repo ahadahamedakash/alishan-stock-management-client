@@ -4,8 +4,16 @@ import config from "../../config";
 
 import { User } from "./user.model";
 import { IUser } from "./user.interface";
+import {
+  emitToRoles,
+  emitNotification,
+  SERVER_EVENTS,
+  NOTIFICATION_TYPES,
+  NOTIFICATION_PRIORITY,
+} from "../../socket";
+import { getUserName } from "../../socket/helpers";
 
-const createUser = async (userData: IUser) => {
+const createUser = async (userData: IUser, issuedBy: string) => {
   try {
     // Check if the email already exists
     const existingUser = await User.findOne({ email: userData.email });
@@ -27,8 +35,41 @@ const createUser = async (userData: IUser) => {
 
     // Create the user
     const user = new User(userWithHashedPassword);
+    const savedUser = await user.save();
 
-    return await user.save();
+    // Emit real-time notification for user created
+    try {
+      const creatorName = await getUserName(issuedBy);
+
+      const userData = {
+        userId: savedUser._id.toString(),
+        name: savedUser.name,
+        email: savedUser.email,
+        role: savedUser.role,
+        createdBy: issuedBy,
+        userName: creatorName,
+        timestamp: new Date(),
+      };
+
+      // Emit user created event to all admins
+      emitToRoles(['admin'], SERVER_EVENTS.USER_CREATED, userData);
+
+      // Also emit as notification
+      emitNotification(
+        ['admin'],
+        NOTIFICATION_TYPES.USER,
+        NOTIFICATION_PRIORITY.LOW,
+        {
+          title: 'New User Created',
+          message: `${savedUser.name} joined as ${savedUser.role}`,
+          details: userData,
+        }
+      );
+    } catch (socketError) {
+      console.error('Failed to emit socket event:', socketError);
+    }
+
+    return savedUser;
   } catch (error) {
     throw error;
   }

@@ -4,8 +4,9 @@ import { InvoiceServices } from "./invoice.service";
 const createInvoice = async (req: Request, res: Response) => {
   try {
     const invoiceData = req.body;
+    const issuedBy = req.user.userId;
 
-    const invoice = await InvoiceServices.createInvoice(invoiceData);
+    const invoice = await InvoiceServices.createInvoice(invoiceData, issuedBy);
 
     res.status(201).json({
       success: true,

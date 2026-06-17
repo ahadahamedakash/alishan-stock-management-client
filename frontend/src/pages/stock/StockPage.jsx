@@ -2,7 +2,7 @@ import { debounce } from "lodash";
 import { Plus, Minus } from "lucide-react";
 import { lazy, Suspense, useEffect, useMemo, useState } from "react";
 
-import { useBoolean } from "@/hooks";
+import { useBoolean, useStockUpdates } from "@/hooks";
 
 import {
   CustomTableBody,
@@ -82,10 +82,16 @@ export default function StockPage() {
 
   const rowsPerPage = 20;
 
-  const { data: stockHistory, isLoading } = useGetAllStockHistoryQuery({
+  const { data: stockHistory, isLoading, refetch: refetchStockHistory } = useGetAllStockHistoryQuery({
     search,
     fromDate: filterDates.from || "",
     toDate: filterDates.to || "",
+  });
+
+  // Listen for real-time stock updates and refetch data
+  useStockUpdates(() => {
+    console.log("🔄 [StockPage] Refetching stock history due to update...");
+    refetchStockHistory();
   });
 
   // Debounced setter for search value

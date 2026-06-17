@@ -6,6 +6,8 @@ import { Sidebar } from "@/components/shared/Sidebar";
 import { Topbar } from "@/components/shared/Topbar";
 import { useSelector } from "react-redux";
 import { useCurrentUser } from "@/redux/features/auth/authSlice";
+import { useSocket } from "@/socket/useSocket";
+import { LiveIndicator } from "@/components/shared/LiveIndicator";
 
 const MOBILE_BREAKPOINT = 768;
 
@@ -17,6 +19,9 @@ export default function DashboardLayout() {
   );
 
   const currentUser = useSelector(useCurrentUser)?.user;
+
+  // Initialize socket for authenticated users
+  useSocket({ autoConnect: true, setupHandlers: true });
 
   // Handle resize to detect mobile or desktop
   useEffect(() => {

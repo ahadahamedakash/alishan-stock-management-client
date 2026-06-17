@@ -15,7 +15,7 @@ import {
 } from "@/components/table";
 import { Button } from "@/components/ui/button";
 
-import { useBoolean } from "@/hooks";
+import { useBoolean, useCustomerUpdates } from "@/hooks";
 import {
   useDeleteCustomerMutation,
   useGetAllCustomerQuery,
@@ -59,7 +59,14 @@ export default function CustomersPage() {
 
   const rowsPerPage = 20;
 
-  const { data: customerData, isLoading } = useGetAllCustomerQuery();
+  const { data: customerData, isLoading, refetch: refetchCustomers } = useGetAllCustomerQuery();
+
+  // Listen for real-time customer updates and refetch customers
+  // When collection is received, customer amounts (paid/due) are updated
+  useCustomerUpdates(() => {
+    console.log("🔄 [CustomersPage] Refetching customers due to collection or update...");
+    refetchCustomers();
+  });
 
   const [deleteCustomer, { isLoading: deleteLoading }] =
     useDeleteCustomerMutation();

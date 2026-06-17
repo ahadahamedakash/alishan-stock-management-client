@@ -4,7 +4,7 @@ import { toast } from "react-hot-toast";
 import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 
-import { useBoolean } from "@/hooks";
+import { useBoolean, useProductUpdates } from "@/hooks";
 
 import {
   CustomTableBody,
@@ -69,7 +69,13 @@ export default function ProductsPage() {
 
   const isAuthorized = canManageProduct(userRole);
 
-  const { data: productData, isLoading } = useGetAllProductQuery();
+  const { data: productData, isLoading, refetch: refetchProducts } = useGetAllProductQuery();
+
+  // Listen for real-time product/stock updates and refetch data
+  useProductUpdates(() => {
+    console.log("🔄 [ProductsPage] Refetching products due to stock update...");
+    refetchProducts();
+  });
 
   const [deleteProduct, { isLoading: deleteLoading }] =
     useDeleteProductMutation();

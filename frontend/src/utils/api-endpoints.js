@@ -1,11 +1,11 @@
 // ------------------------------------------------------------
 
 // FOR DEVELOPMENT
-// export const API_BASE_URL = "http://localhost:5000/api/v1";
+export const API_BASE_URL = "http://localhost:5000/api/v1";
 
 // FOR PRODUCTION ( RENDER - DEPLOYMENT )
-export const API_BASE_URL =
-  "https://alishan-stock-management-server.onrender.com/api/v1";
+// export const API_BASE_URL =
+//   "https://alishan-stock-management-server.onrender.com/api/v1";
 
 export const API_ENDPOINTS = {
   //  AUTH APIS

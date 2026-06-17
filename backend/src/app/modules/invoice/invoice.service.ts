@@ -8,8 +8,16 @@ import { Invoice } from "./invoice.model";
 import { Balance } from "../balance/balance.model";
 import { Product } from "../product/product.model";
 import { Customer } from "../customer/customer.model";
+import {
+  emitToRoles,
+  emitNotification,
+  SERVER_EVENTS,
+  NOTIFICATION_TYPES,
+  NOTIFICATION_PRIORITY,
+} from "../../socket";
+import { getUserName } from "../../socket/helpers";
 
-const createInvoice = async (invoiceData: IInvoice) => {
+const createInvoice = async (invoiceData: IInvoice, issuedBy: string) => {
   const session = await mongoose.startSession();
   session.startTransaction();
 
@@ -78,6 +86,42 @@ const createInvoice = async (invoiceData: IInvoice) => {
     // Commit transaction
     await session.commitTransaction();
     session.endSession();
+
+    // Emit real-time notification for invoice created
+    try {
+      const userName = await getUserName(issuedBy);
+      const customer = await Customer.findById(customerId).select('name');
+
+      const invoiceData = {
+        invoiceId: invoice._id.toString(),
+        invoiceNumber: invoice.invoiceNumber,
+        customerId: customerId.toString(),
+        customerName: customer?.name || 'Unknown',
+        totalAmount,
+        paidAmount,
+        dueAmount,
+        createdBy: issuedBy,
+        userName,
+        timestamp: new Date(),
+      };
+
+      // Emit invoice created event to admin, accountant, and stock-manager
+      emitToRoles(['admin', 'accountant', 'stock-manager'], SERVER_EVENTS.INVOICE_CREATED, invoiceData);
+
+      // Also emit as notification
+      emitNotification(
+        ['admin', 'accountant', 'stock-manager'],
+        NOTIFICATION_TYPES.INVOICE,
+        NOTIFICATION_PRIORITY.MEDIUM,
+        {
+          title: 'New Invoice Created',
+          message: `Invoice ${invoice.invoiceNumber} - ${customer?.name || 'Unknown'} - ৳${totalAmount}`,
+          details: invoiceData,
+        }
+      );
+    } catch (socketError) {
+      console.error('Failed to emit socket event:', socketError);
+    }
 
     return populatedInvoice;
   } catch (error: unknown) {
