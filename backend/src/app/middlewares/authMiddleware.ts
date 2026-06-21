@@ -6,6 +6,14 @@ import config from "../config";
 import { User } from "../modules/user/user.model";
 import { TUserRole } from "../modules/user/user.interface";
 
+// Extend JwtPayload to include custom properties from our token
+interface CustomJwtPayload extends JwtPayload {
+  userId: string;
+  role: "super_admin" | "admin" | "accountant" | "stock_manager";
+  email: string;
+  name?: string;
+}
+
 export const authMiddleware = (...requiredRoles: TUserRole[]) => {
   return async (req: Request, _res: Response, next: NextFunction) => {
     const token = req.headers.authorization;
@@ -17,7 +25,10 @@ export const authMiddleware = (...requiredRoles: TUserRole[]) => {
 
     // CHECK IF THE TOKEN IS VALID
     try {
-      const decoded = jwt.verify(token, config.jwt_access_secret) as JwtPayload;
+      const decoded = jwt.verify(
+        token,
+        config.jwt_access_secret,
+      ) as CustomJwtPayload;
 
       const role = decoded.role;
 

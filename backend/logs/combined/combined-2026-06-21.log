@@ -1,0 +1,345 @@
+{"database_url":"mongodb+srv://cicadaM10:cicadA1033@cluster0.iyztv4y.mongodb.net/alishan-stock?retryWrites=true&w=majority&appName=Cluster0","level":"info","message":"Connecting to MongoDB...","timestamp":"2026-06-21 18:43:32"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-06-21 18:43:33"}
+{"level":"info","message":"Super admin seeded successfully","timestamp":"2026-06-21 18:43:34"}
+{"level":"info","message":"Balance seeded successfully","timestamp":"2026-06-21 18:43:34"}
+{"env":"development","level":"info","message":"Server listening on port 5000","port":"5000","timestamp":"2026-06-21 18:43:34"}
+{"database_url":"mongodb+srv://cicadaM10:cicadA1033@cluster0.iyztv4y.mongodb.net/alishan-stock?retryWrites=true&w=majority&appName=Cluster0","level":"info","message":"Connecting to MongoDB...","timestamp":"2026-06-21 18:43:59"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-06-21 18:43:59"}
+{"level":"info","message":"Super admin seeded successfully","timestamp":"2026-06-21 18:44:00"}
+{"level":"info","message":"Balance seeded successfully","timestamp":"2026-06-21 18:44:00"}
+{"env":"development","level":"info","message":"Server listening on port 5000","port":"5000","timestamp":"2026-06-21 18:44:00"}
+{"database_url":"mongodb+srv://cicadaM10:cicadA1033@cluster0.iyztv4y.mongodb.net/alishan-stock?retryWrites=true&w=majority&appName=Cluster0","level":"info","message":"Connecting to MongoDB...","timestamp":"2026-06-21 18:44:12"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-06-21 18:44:13"}
+{"level":"info","message":"Super admin seeded successfully","timestamp":"2026-06-21 18:44:14"}
+{"level":"info","message":"Balance seeded successfully","timestamp":"2026-06-21 18:44:14"}
+{"env":"development","level":"info","message":"Server listening on port 5000","port":"5000","timestamp":"2026-06-21 18:44:14"}
+{"database_url":"mongodb+srv://cicadaM10:cicadA1033@cluster0.iyztv4y.mongodb.net/alishan-stock?retryWrites=true&w=majority&appName=Cluster0","level":"info","message":"Connecting to MongoDB...","timestamp":"2026-06-21 18:44:28"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-06-21 18:44:29"}
+{"level":"info","message":"Super admin seeded successfully","timestamp":"2026-06-21 18:44:30"}
+{"level":"info","message":"Balance seeded successfully","timestamp":"2026-06-21 18:44:30"}
+{"env":"development","level":"info","message":"Server listening on port 5000","port":"5000","timestamp":"2026-06-21 18:44:30"}
+{"database_url":"mongodb+srv://cicadaM10:cicadA1033@cluster0.iyztv4y.mongodb.net/alishan-stock?retryWrites=true&w=majority&appName=Cluster0","level":"info","message":"Connecting to MongoDB...","timestamp":"2026-06-21 18:44:41"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-06-21 18:44:42"}
+{"level":"info","message":"Super admin seeded successfully","timestamp":"2026-06-21 18:44:42"}
+{"level":"info","message":"Balance seeded successfully","timestamp":"2026-06-21 18:44:43"}
+{"env":"development","level":"info","message":"Server listening on port 5000","port":"5000","timestamp":"2026-06-21 18:44:43"}
+{"database_url":"mongodb+srv://cicadaM10:cicadA1033@cluster0.iyztv4y.mongodb.net/alishan-stock?retryWrites=true&w=majority&appName=Cluster0","level":"info","message":"Connecting to MongoDB...","timestamp":"2026-06-21 18:44:56"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-06-21 18:44:57"}
+{"level":"info","message":"Super admin seeded successfully","timestamp":"2026-06-21 18:44:57"}
+{"level":"info","message":"Balance seeded successfully","timestamp":"2026-06-21 18:44:57"}
+{"env":"development","level":"info","message":"Server listening on port 5000","port":"5000","timestamp":"2026-06-21 18:44:57"}
+{"database_url":"mongodb+srv://cicadaM10:cicadA1033@cluster0.iyztv4y.mongodb.net/alishan-stock?retryWrites=true&w=majority&appName=Cluster0","level":"info","message":"Connecting to MongoDB...","timestamp":"2026-06-21 18:45:10"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-06-21 18:45:10"}
+{"level":"info","message":"Super admin seeded successfully","timestamp":"2026-06-21 18:45:11"}
+{"level":"info","message":"Balance seeded successfully","timestamp":"2026-06-21 18:45:11"}
+{"env":"development","level":"info","message":"Server listening on port 5000","port":"5000","timestamp":"2026-06-21 18:45:11"}
+{"database_url":"mongodb+srv://cicadaM10:cicadA1033@cluster0.iyztv4y.mongodb.net/alishan-stock?retryWrites=true&w=majority&appName=Cluster0","level":"info","message":"Connecting to MongoDB...","timestamp":"2026-06-21 18:45:21"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-06-21 18:45:21"}
+{"level":"info","message":"Super admin seeded successfully","timestamp":"2026-06-21 18:45:22"}
+{"level":"info","message":"Balance seeded successfully","timestamp":"2026-06-21 18:45:22"}
+{"env":"development","level":"info","message":"Server listening on port 5000","port":"5000","timestamp":"2026-06-21 18:45:22"}
+{"database_url":"mongodb+srv://cicadaM10:cicadA1033@cluster0.iyztv4y.mongodb.net/alishan-stock?retryWrites=true&w=majority&appName=Cluster0","level":"info","message":"Connecting to MongoDB...","timestamp":"2026-06-21 18:45:33"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-06-21 18:45:34"}
+{"level":"info","message":"Super admin seeded successfully","timestamp":"2026-06-21 18:45:34"}
+{"level":"info","message":"Balance seeded successfully","timestamp":"2026-06-21 18:45:35"}
+{"env":"development","level":"info","message":"Server listening on port 5000","port":"5000","timestamp":"2026-06-21 18:45:35"}
+{"database_url":"mongodb+srv://cicadaM10:cicadA1033@cluster0.iyztv4y.mongodb.net/alishan-stock?retryWrites=true&w=majority&appName=Cluster0","level":"info","message":"Connecting to MongoDB...","timestamp":"2026-06-21 18:45:49"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-06-21 18:45:50"}
+{"level":"info","message":"Super admin seeded successfully","timestamp":"2026-06-21 18:45:50"}
+{"level":"info","message":"Balance seeded successfully","timestamp":"2026-06-21 18:45:50"}
+{"env":"development","level":"info","message":"Server listening on port 5000","port":"5000","timestamp":"2026-06-21 18:45:50"}
+{"database_url":"mongodb+srv://cicadaM10:cicadA1033@cluster0.iyztv4y.mongodb.net/alishan-stock?retryWrites=true&w=majority&appName=Cluster0","level":"info","message":"Connecting to MongoDB...","timestamp":"2026-06-21 18:46:10"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-06-21 18:46:11"}
+{"level":"info","message":"Super admin seeded successfully","timestamp":"2026-06-21 18:46:11"}
+{"level":"info","message":"Balance seeded successfully","timestamp":"2026-06-21 18:46:11"}
+{"frontendUrl":"http://localhost:5173","level":"info","message":"Socket.IO server initialized","timestamp":"2026-06-21 18:46:11","transports":["websocket","polling"]}
+{"env":"development","level":"info","message":"Server listening on port 5000","port":"5000","timestamp":"2026-06-21 18:46:11"}
+{"level":"debug","message":"Socket authenticated","socketId":"b13x4yH5RTJcTfoJAAAB","timestamp":"2026-06-21 18:46:16","userId":"68362295a09d72aaa0d871d5","userRole":"admin"}
+{"database_url":"mongodb+srv://cicadaM10:cicadA1033@cluster0.iyztv4y.mongodb.net/alishan-stock?retryWrites=true&w=majority&appName=Cluster0","level":"info","message":"Connecting to MongoDB...","timestamp":"2026-06-21 18:46:31"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-06-21 18:46:32"}
+{"level":"info","message":"Super admin seeded successfully","timestamp":"2026-06-21 18:46:32"}
+{"level":"info","message":"Balance seeded successfully","timestamp":"2026-06-21 18:46:33"}
+{"frontendUrl":"http://localhost:5173","level":"info","message":"Socket.IO server initialized","timestamp":"2026-06-21 18:46:33","transports":["websocket","polling"]}
+{"env":"development","level":"info","message":"Server listening on port 5000","port":"5000","timestamp":"2026-06-21 18:46:33"}
+{"level":"debug","message":"Socket authenticated","socketId":"Hd5ezH0wHQ5wPCqvAAAB","timestamp":"2026-06-21 18:46:33","userId":"68362295a09d72aaa0d871d5","userRole":"admin"}
+{"email":"admin@alishan.com","level":"info","message":"Socket connected","socketId":"Hd5ezH0wHQ5wPCqvAAAB","timestamp":"2026-06-21 18:46:33","userId":"68362295a09d72aaa0d871d5","userRole":"admin"}
+{"level":"debug","message":"Socket joined role room","roleRoom":"role:admin","socketId":"Hd5ezH0wHQ5wPCqvAAAB","timestamp":"2026-06-21 18:46:33","userRole":"admin"}
+{"database_url":"mongodb+srv://cicadaM10:cicadA1033@cluster0.iyztv4y.mongodb.net/alishan-stock?retryWrites=true&w=majority&appName=Cluster0","level":"info","message":"Connecting to MongoDB...","timestamp":"2026-06-21 18:46:45"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-06-21 18:46:45"}
+{"level":"info","message":"Super admin seeded successfully","timestamp":"2026-06-21 18:46:46"}
+{"level":"info","message":"Balance seeded successfully","timestamp":"2026-06-21 18:46:46"}
+{"frontendUrl":"http://localhost:5173","level":"info","message":"Socket.IO server initialized","timestamp":"2026-06-21 18:46:46","transports":["websocket","polling"]}
+{"env":"development","level":"info","message":"Server listening on port 5000","port":"5000","timestamp":"2026-06-21 18:46:46"}
+{"level":"debug","message":"Socket authenticated","socketId":"G8l_UIVjN5w5j3xRAAAB","timestamp":"2026-06-21 18:46:50","userId":"68362295a09d72aaa0d871d5","userRole":"admin"}
+{"email":"admin@alishan.com","level":"info","message":"Socket connected","socketId":"G8l_UIVjN5w5j3xRAAAB","timestamp":"2026-06-21 18:46:50","userId":"68362295a09d72aaa0d871d5","userRole":"admin"}
+{"level":"debug","message":"Socket joined role room","roleRoom":"role:admin","socketId":"G8l_UIVjN5w5j3xRAAAB","timestamp":"2026-06-21 18:46:50","userRole":"admin"}
+{"database_url":"mongodb+srv://cicadaM10:cicadA1033@cluster0.iyztv4y.mongodb.net/alishan-stock?retryWrites=true&w=majority&appName=Cluster0","level":"info","message":"Connecting to MongoDB...","timestamp":"2026-06-21 18:47:16"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-06-21 18:47:17"}
+{"level":"info","message":"Super admin seeded successfully","timestamp":"2026-06-21 18:47:17"}
+{"level":"info","message":"Balance seeded successfully","timestamp":"2026-06-21 18:47:17"}
+{"frontendUrl":"http://localhost:5173","level":"info","message":"Socket.IO server initialized","timestamp":"2026-06-21 18:47:17","transports":["websocket","polling"]}
+{"env":"development","level":"info","message":"Server listening on port 5000","port":"5000","timestamp":"2026-06-21 18:47:17"}
+{"level":"debug","message":"Socket authenticated","socketId":"G5-TrfW8pfxVBQaNAAAB","timestamp":"2026-06-21 18:47:17","userId":"68362295a09d72aaa0d871d5","userRole":"admin"}
+{"email":"admin@alishan.com","level":"info","message":"Socket connected","socketId":"G5-TrfW8pfxVBQaNAAAB","timestamp":"2026-06-21 18:47:17","userId":"68362295a09d72aaa0d871d5","userRole":"admin"}
+{"level":"debug","message":"Socket joined role room","roleRoom":"role:admin","socketId":"G5-TrfW8pfxVBQaNAAAB","timestamp":"2026-06-21 18:47:17","userRole":"admin"}
+{"database_url":"mongodb+srv://cicadaM10:cicadA1033@cluster0.iyztv4y.mongodb.net/alishan-stock?retryWrites=true&w=majority&appName=Cluster0","level":"info","message":"Connecting to MongoDB...","timestamp":"2026-06-21 18:47:44"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-06-21 18:47:45"}
+{"level":"info","message":"Super admin seeded successfully","timestamp":"2026-06-21 18:47:45"}
+{"level":"info","message":"Balance seeded successfully","timestamp":"2026-06-21 18:47:46"}
+{"frontendUrl":"http://localhost:5173","level":"info","message":"Socket.IO server initialized","timestamp":"2026-06-21 18:47:46","transports":["websocket","polling"]}
+{"env":"development","level":"info","message":"Server listening on port 5000","port":"5000","timestamp":"2026-06-21 18:47:46"}
+{"level":"debug","message":"Socket authenticated","socketId":"hyfd0ksloXFox_23AAAB","timestamp":"2026-06-21 18:47:46","userId":"68362295a09d72aaa0d871d5","userRole":"admin"}
+{"email":"admin@alishan.com","level":"info","message":"Socket connected","socketId":"hyfd0ksloXFox_23AAAB","timestamp":"2026-06-21 18:47:46","userId":"68362295a09d72aaa0d871d5","userRole":"admin"}
+{"level":"debug","message":"Socket joined role room","roleRoom":"role:admin","socketId":"hyfd0ksloXFox_23AAAB","timestamp":"2026-06-21 18:47:46","userRole":"admin"}
+{"database_url":"mongodb+srv://cicadaM10:cicadA1033@cluster0.iyztv4y.mongodb.net/alishan-stock?retryWrites=true&w=majority&appName=Cluster0","level":"info","message":"Connecting to MongoDB...","timestamp":"2026-06-21 18:47:50"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-06-21 18:47:50"}
+{"level":"info","message":"Super admin seeded successfully","timestamp":"2026-06-21 18:47:51"}
+{"level":"info","message":"Balance seeded successfully","timestamp":"2026-06-21 18:47:51"}
+{"frontendUrl":"http://localhost:5173","level":"info","message":"Socket.IO server initialized","timestamp":"2026-06-21 18:47:51","transports":["websocket","polling"]}
+{"env":"development","level":"info","message":"Server listening on port 5000","port":"5000","timestamp":"2026-06-21 18:47:51"}
+{"level":"debug","message":"Socket authenticated","socketId":"txY9g3wFsuQi6NMYAAAB","timestamp":"2026-06-21 18:47:54","userId":"68362295a09d72aaa0d871d5","userRole":"admin"}
+{"email":"admin@alishan.com","level":"info","message":"Socket connected","socketId":"txY9g3wFsuQi6NMYAAAB","timestamp":"2026-06-21 18:47:54","userId":"68362295a09d72aaa0d871d5","userRole":"admin"}
+{"level":"debug","message":"Socket joined role room","roleRoom":"role:admin","socketId":"txY9g3wFsuQi6NMYAAAB","timestamp":"2026-06-21 18:47:54","userRole":"admin"}
+{"database_url":"mongodb+srv://cicadaM10:cicadA1033@cluster0.iyztv4y.mongodb.net/alishan-stock?retryWrites=true&w=majority&appName=Cluster0","level":"info","message":"Connecting to MongoDB...","timestamp":"2026-06-21 18:48:14"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-06-21 18:48:15"}
+{"level":"info","message":"Super admin seeded successfully","timestamp":"2026-06-21 18:48:16"}
+{"level":"info","message":"Balance seeded successfully","timestamp":"2026-06-21 18:48:16"}
+{"frontendUrl":"http://localhost:5173","level":"info","message":"Socket.IO server initialized","timestamp":"2026-06-21 18:48:16","transports":["websocket","polling"]}
+{"env":"development","level":"info","message":"Server listening on port 5000","port":"5000","timestamp":"2026-06-21 18:48:16"}
+{"level":"debug","message":"Socket authenticated","socketId":"Zbhr5wMnP5_MJxQvAAAB","timestamp":"2026-06-21 18:48:16","userId":"68362295a09d72aaa0d871d5","userRole":"admin"}
+{"email":"admin@alishan.com","level":"info","message":"Socket connected","socketId":"Zbhr5wMnP5_MJxQvAAAB","timestamp":"2026-06-21 18:48:16","userId":"68362295a09d72aaa0d871d5","userRole":"admin"}
+{"level":"debug","message":"Socket joined role room","roleRoom":"role:admin","socketId":"Zbhr5wMnP5_MJxQvAAAB","timestamp":"2026-06-21 18:48:16","userRole":"admin"}
+{"database_url":"mongodb+srv://cicadaM10:cicadA1033@cluster0.iyztv4y.mongodb.net/alishan-stock?retryWrites=true&w=majority&appName=Cluster0","level":"info","message":"Connecting to MongoDB...","timestamp":"2026-06-21 18:48:26"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-06-21 18:48:27"}
+{"level":"info","message":"Super admin seeded successfully","timestamp":"2026-06-21 18:48:27"}
+{"level":"info","message":"Balance seeded successfully","timestamp":"2026-06-21 18:48:27"}
+{"frontendUrl":"http://localhost:5173","level":"info","message":"Socket.IO server initialized","timestamp":"2026-06-21 18:48:27","transports":["websocket","polling"]}
+{"env":"development","level":"info","message":"Server listening on port 5000","port":"5000","timestamp":"2026-06-21 18:48:27"}
+{"level":"debug","message":"Socket authenticated","socketId":"9zUXidUNQKjj8JwUAAAB","timestamp":"2026-06-21 18:48:28","userId":"68362295a09d72aaa0d871d5","userRole":"admin"}
+{"email":"admin@alishan.com","level":"info","message":"Socket connected","socketId":"9zUXidUNQKjj8JwUAAAB","timestamp":"2026-06-21 18:48:28","userId":"68362295a09d72aaa0d871d5","userRole":"admin"}
+{"level":"debug","message":"Socket joined role room","roleRoom":"role:admin","socketId":"9zUXidUNQKjj8JwUAAAB","timestamp":"2026-06-21 18:48:28","userRole":"admin"}
+{"database_url":"mongodb+srv://cicadaM10:cicadA1033@cluster0.iyztv4y.mongodb.net/alishan-stock?retryWrites=true&w=majority&appName=Cluster0","level":"info","message":"Connecting to MongoDB...","timestamp":"2026-06-21 18:48:41"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-06-21 18:48:41"}
+{"level":"info","message":"Super admin seeded successfully","timestamp":"2026-06-21 18:48:42"}
+{"level":"info","message":"Balance seeded successfully","timestamp":"2026-06-21 18:48:42"}
+{"frontendUrl":"http://localhost:5173","level":"info","message":"Socket.IO server initialized","timestamp":"2026-06-21 18:48:42","transports":["websocket","polling"]}
+{"env":"development","level":"info","message":"Server listening on port 5000","port":"5000","timestamp":"2026-06-21 18:48:42"}
+{"database_url":"mongodb+srv://cicadaM10:cicadA1033@cluster0.iyztv4y.mongodb.net/alishan-stock?retryWrites=true&w=majority&appName=Cluster0","level":"info","message":"Connecting to MongoDB...","timestamp":"2026-06-21 18:48:47"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-06-21 18:48:47"}
+{"level":"info","message":"Super admin seeded successfully","timestamp":"2026-06-21 18:48:48"}
+{"level":"info","message":"Balance seeded successfully","timestamp":"2026-06-21 18:48:48"}
+{"frontendUrl":"http://localhost:5173","level":"info","message":"Socket.IO server initialized","timestamp":"2026-06-21 18:48:48","transports":["websocket","polling"]}
+{"env":"development","level":"info","message":"Server listening on port 5000","port":"5000","timestamp":"2026-06-21 18:48:48"}
+{"level":"debug","message":"Socket authenticated","socketId":"unVYwIVwWdsP1DrBAAAB","timestamp":"2026-06-21 18:48:53","userId":"68362295a09d72aaa0d871d5","userRole":"admin"}
+{"email":"admin@alishan.com","level":"info","message":"Socket connected","socketId":"unVYwIVwWdsP1DrBAAAB","timestamp":"2026-06-21 18:48:53","userId":"68362295a09d72aaa0d871d5","userRole":"admin"}
+{"level":"debug","message":"Socket joined role room","roleRoom":"role:admin","socketId":"unVYwIVwWdsP1DrBAAAB","timestamp":"2026-06-21 18:48:53","userRole":"admin"}
+{"email":"admin@alishan.com","level":"info","message":"Socket disconnected","socketId":"unVYwIVwWdsP1DrBAAAB","timestamp":"2026-06-21 18:50:32","userRole":"admin"}
+{"level":"debug","message":"Socket authenticated","socketId":"AnJqIa3Nh3nqJeSwAAAD","timestamp":"2026-06-21 18:50:34","userId":"68362295a09d72aaa0d871d5","userRole":"admin"}
+{"email":"admin@alishan.com","level":"info","message":"Socket connected","socketId":"AnJqIa3Nh3nqJeSwAAAD","timestamp":"2026-06-21 18:50:34","userId":"68362295a09d72aaa0d871d5","userRole":"admin"}
+{"level":"debug","message":"Socket joined role room","roleRoom":"role:admin","socketId":"AnJqIa3Nh3nqJeSwAAAD","timestamp":"2026-06-21 18:50:34","userRole":"admin"}
+{"duration":"54ms","ip":"::1","level":"info","message":"HTTP Request","method":"GET","requestId":"0deb0b8b-8680-4e7f-b2a2-0d4cde2cd61d","statusCode":304,"timestamp":"2026-06-21 18:50:34","url":"/sales-summary","userAgent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"}
+{"duration":"52ms","ip":"::1","level":"info","message":"HTTP Request","method":"GET","requestId":"fb0c2f9b-63bb-420d-a37b-e9dd83475a6d","statusCode":304,"timestamp":"2026-06-21 18:50:34","url":"/monthly-sales-summary","userAgent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"}
+{"duration":"100ms","ip":"::1","level":"info","message":"HTTP Request","method":"GET","requestId":"bb1dbce8-10f7-4b48-91d9-77696f886b8d","statusCode":304,"timestamp":"2026-06-21 18:50:34","url":"/get-balance","userAgent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"}
+{"duration":"122ms","ip":"::1","level":"info","message":"HTTP Request","method":"GET","requestId":"b6a51cb6-a441-4730-b0df-af9b533122a4","statusCode":304,"timestamp":"2026-06-21 18:50:34","url":"/recent-expenses","userAgent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"}
+{"duration":"98ms","ip":"::1","level":"info","message":"HTTP Request","method":"GET","requestId":"1a9692b4-eb07-4809-b25d-1764543235d7","statusCode":304,"timestamp":"2026-06-21 18:51:03","url":"/get-all-product","userAgent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"}
+{"action":"LOGIN","auditLogId":"6a37de458527842720bf44bb","entityType":"User","level":"debug","message":"Audit log created","timestamp":"2026-06-21 18:51:17","userId":"683622cca09d72aaa0d871db"}
+{"email":"accountant@alishan.com","level":"info","message":"User logged in successfully","requestId":"da005863-de32-43c1-8927-758f00135c8b","timestamp":"2026-06-21 18:51:17","userRole":"accountant"}
+{"duration":"225ms","ip":"::1","level":"info","message":"HTTP Request","method":"POST","requestId":"da005863-de32-43c1-8927-758f00135c8b","statusCode":200,"timestamp":"2026-06-21 18:51:17","url":"/login","userAgent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"}
+{"action":"LOGIN","auditLogId":"6a37de568527842720bf44be","entityType":"User","level":"debug","message":"Audit log created","timestamp":"2026-06-21 18:51:34","userId":"683622ffa09d72aaa0d871e1"}
+{"email":"stockmanager@alishan.com","level":"info","message":"User logged in successfully","requestId":"a74f0f53-5174-46bb-b9ec-308f7c77b318","timestamp":"2026-06-21 18:51:34","userRole":"stock_manager"}
+{"duration":"196ms","ip":"::1","level":"info","message":"HTTP Request","method":"POST","requestId":"a74f0f53-5174-46bb-b9ec-308f7c77b318","statusCode":200,"timestamp":"2026-06-21 18:51:34","url":"/login","userAgent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"}
+{"duration":"172ms","ip":"::1","level":"info","message":"HTTP Request","method":"GET","requestId":"9530cc79-3de5-4b0c-9b17-45ef5a743f5a","statusCode":304,"timestamp":"2026-06-21 18:51:38","url":"/stock-history?","userAgent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"}
+{"duration":"90ms","ip":"::1","level":"info","message":"HTTP Request","method":"GET","requestId":"81862581-012a-42f5-8b39-05652475db61","statusCode":304,"timestamp":"2026-06-21 18:51:40","url":"/get-all-product","userAgent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"}
+{"issuedBy":"683622ffa09d72aaa0d871e1","level":"info","message":"Stock added","newStock":10,"productId":"6836237ba09d72aaa0d871f5","productName":"BGP-03","quantity":5,"timestamp":"2026-06-21 18:51:46"}
+{"event":"stock:added","level":"debug","message":"Socket emitting to roles","roles":["admin","stock-manager"],"timestamp":"2026-06-21 18:51:46"}
+{"event":"stock:added","level":"debug","message":"Socket emitting to role","role":"admin","roleRoom":"role:admin","timestamp":"2026-06-21 18:51:46"}
+{"event":"stock:added","level":"debug","message":"Socket emitting to role","role":"stock-manager","roleRoom":"role:stock-manager","timestamp":"2026-06-21 18:51:46"}
+{"level":"debug","message":"Socket emitting notification","priority":"medium","targetRoles":["admin","stock-manager"],"timestamp":"2026-06-21 18:51:46","type":"stock_in"}
+{"event":"notification","level":"debug","message":"Socket emitting to roles","roles":["admin","stock-manager"],"timestamp":"2026-06-21 18:51:46"}
+{"event":"notification","level":"debug","message":"Socket emitting to role","role":"admin","roleRoom":"role:admin","timestamp":"2026-06-21 18:51:46"}
+{"event":"notification","level":"debug","message":"Socket emitting to role","role":"stock-manager","roleRoom":"role:stock-manager","timestamp":"2026-06-21 18:51:46"}
+{"duration":"240ms","ip":"::1","level":"info","message":"HTTP Request","method":"POST","requestId":"125bb22d-82b3-4e35-b2a5-e0f26e00844e","statusCode":201,"timestamp":"2026-06-21 18:51:46","url":"/add-stock","userAgent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"}
+{"action":"STOCK_ADD","auditLogId":"6a37de628527842720bf44cc","entityType":"Stock","level":"debug","message":"Audit log created","timestamp":"2026-06-21 18:51:46","userId":"683622ffa09d72aaa0d871e1"}
+{"duration":"96ms","ip":"::1","level":"info","message":"HTTP Request","method":"GET","requestId":"e883c972-40f1-4f6b-992f-9696a1615d8a","statusCode":200,"timestamp":"2026-06-21 18:51:46","url":"/get-all-product","userAgent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"}
+{"duration":"150ms","ip":"::1","level":"info","message":"HTTP Request","method":"GET","requestId":"5db5bdad-6bc3-4dbc-b64c-947872021f50","statusCode":200,"timestamp":"2026-06-21 18:51:46","url":"/stock-history?","userAgent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"}
+{"action":"LOGIN","auditLogId":"6a37de898527842720bf44d5","entityType":"User","level":"debug","message":"Audit log created","timestamp":"2026-06-21 18:52:25","userId":"683622cca09d72aaa0d871db"}
+{"email":"accountant@alishan.com","level":"info","message":"User logged in successfully","requestId":"3da08b71-7000-4668-a64b-dee8eb8daf66","timestamp":"2026-06-21 18:52:25","userRole":"accountant"}
+{"duration":"220ms","ip":"::1","level":"info","message":"HTTP Request","method":"POST","requestId":"3da08b71-7000-4668-a64b-dee8eb8daf66","statusCode":200,"timestamp":"2026-06-21 18:52:25","url":"/login","userAgent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"}
+{"duration":"95ms","ip":"::1","level":"info","message":"HTTP Request","method":"GET","requestId":"40b5a9f1-3499-48ce-b8ed-db4a55efc401","statusCode":304,"timestamp":"2026-06-21 18:52:26","url":"/get-all-product","userAgent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"}
+{"duration":"102ms","ip":"::1","level":"info","message":"HTTP Request","method":"GET","requestId":"9c30ab7d-cd87-41d4-8cae-0635bb9dde80","statusCode":200,"timestamp":"2026-06-21 18:52:37","url":"/get-all-customer","userAgent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"}
+{"database_url":"mongodb+srv://cicadaM10:cicadA1033@cluster0.iyztv4y.mongodb.net/alishan-stock?retryWrites=true&w=majority&appName=Cluster0","level":"info","message":"Connecting to MongoDB...","timestamp":"2026-06-21 18:54:05"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-06-21 18:54:06"}
+{"level":"info","message":"Super admin seeded successfully","timestamp":"2026-06-21 18:54:07"}
+{"level":"info","message":"Balance seeded successfully","timestamp":"2026-06-21 18:54:07"}
+{"frontendUrl":"http://localhost:5173","level":"info","message":"Socket.IO server initialized","timestamp":"2026-06-21 18:54:07","transports":["websocket","polling"]}
+{"env":"development","level":"info","message":"Server listening on port 5000","port":"5000","timestamp":"2026-06-21 18:54:07"}
+{"level":"debug","message":"Socket authenticated","socketId":"jqoU5J1knFPSvDNVAAAB","timestamp":"2026-06-21 18:54:09","userId":"68362295a09d72aaa0d871d5","userRole":"admin"}
+{"email":"admin@alishan.com","level":"info","message":"Socket connected","socketId":"jqoU5J1knFPSvDNVAAAB","timestamp":"2026-06-21 18:54:09","userId":"68362295a09d72aaa0d871d5","userRole":"admin"}
+{"level":"debug","message":"Socket joined role room","roleRoom":"role:admin","socketId":"jqoU5J1knFPSvDNVAAAB","timestamp":"2026-06-21 18:54:09","userRole":"admin"}
+{"database_url":"mongodb+srv://cicadaM10:cicadA1033@cluster0.iyztv4y.mongodb.net/alishan-stock?retryWrites=true&w=majority&appName=Cluster0","level":"info","message":"Connecting to MongoDB...","timestamp":"2026-06-21 18:54:14"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-06-21 18:54:15"}
+{"level":"info","message":"Super admin seeded successfully","timestamp":"2026-06-21 18:54:15"}
+{"level":"info","message":"Balance seeded successfully","timestamp":"2026-06-21 18:54:15"}
+{"frontendUrl":"http://localhost:5173","level":"info","message":"Socket.IO server initialized","timestamp":"2026-06-21 18:54:15","transports":["websocket","polling"]}
+{"env":"development","level":"info","message":"Server listening on port 5000","port":"5000","timestamp":"2026-06-21 18:54:15"}
+{"level":"debug","message":"Socket authenticated","socketId":"3ErtEXtIpTmBPT5lAAAB","timestamp":"2026-06-21 18:54:20","userId":"68362295a09d72aaa0d871d5","userRole":"admin"}
+{"email":"admin@alishan.com","level":"info","message":"Socket connected","socketId":"3ErtEXtIpTmBPT5lAAAB","timestamp":"2026-06-21 18:54:20","userId":"68362295a09d72aaa0d871d5","userRole":"admin"}
+{"level":"debug","message":"Socket joined role room","roleRoom":"role:admin","socketId":"3ErtEXtIpTmBPT5lAAAB","timestamp":"2026-06-21 18:54:20","userRole":"admin"}
+{"database_url":"mongodb+srv://cicadaM10:cicadA1033@cluster0.iyztv4y.mongodb.net/alishan-stock?retryWrites=true&w=majority&appName=Cluster0","level":"info","message":"Connecting to MongoDB...","timestamp":"2026-06-21 18:54:30"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-06-21 18:54:30"}
+{"level":"info","message":"Super admin seeded successfully","timestamp":"2026-06-21 18:54:31"}
+{"level":"info","message":"Balance seeded successfully","timestamp":"2026-06-21 18:54:31"}
+{"frontendUrl":"http://localhost:5173","level":"info","message":"Socket.IO server initialized","timestamp":"2026-06-21 18:54:31","transports":["websocket","polling"]}
+{"env":"development","level":"info","message":"Server listening on port 5000","port":"5000","timestamp":"2026-06-21 18:54:31"}
+{"level":"debug","message":"Socket authenticated","socketId":"82tGS2beAlfUNOOzAAAB","timestamp":"2026-06-21 18:54:33","userId":"68362295a09d72aaa0d871d5","userRole":"admin"}
+{"email":"admin@alishan.com","level":"info","message":"Socket connected","socketId":"82tGS2beAlfUNOOzAAAB","timestamp":"2026-06-21 18:54:33","userId":"68362295a09d72aaa0d871d5","userRole":"admin"}
+{"level":"debug","message":"Socket joined role room","roleRoom":"role:admin","socketId":"82tGS2beAlfUNOOzAAAB","timestamp":"2026-06-21 18:54:33","userRole":"admin"}
+{"database_url":"mongodb+srv://cicadaM10:cicadA1033@cluster0.iyztv4y.mongodb.net/alishan-stock?retryWrites=true&w=majority&appName=Cluster0","level":"info","message":"Connecting to MongoDB...","timestamp":"2026-06-21 18:56:53"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-06-21 18:56:53"}
+{"level":"info","message":"Super admin seeded successfully","timestamp":"2026-06-21 18:56:54"}
+{"level":"info","message":"Balance seeded successfully","timestamp":"2026-06-21 18:56:54"}
+{"frontendUrl":"http://localhost:5173","level":"info","message":"Socket.IO server initialized","timestamp":"2026-06-21 18:56:54","transports":["websocket","polling"]}
+{"env":"development","level":"info","message":"Server listening on port 5000","port":"5000","timestamp":"2026-06-21 18:56:54"}
+{"level":"debug","message":"Socket authenticated","socketId":"_BOuf_D5dwypbW9tAAAB","timestamp":"2026-06-21 18:56:54","userId":"68362295a09d72aaa0d871d5","userRole":"admin"}
+{"email":"admin@alishan.com","level":"info","message":"Socket connected","socketId":"_BOuf_D5dwypbW9tAAAB","timestamp":"2026-06-21 18:56:54","userId":"68362295a09d72aaa0d871d5","userRole":"admin"}
+{"level":"debug","message":"Socket joined role room","roleRoom":"role:admin","socketId":"_BOuf_D5dwypbW9tAAAB","timestamp":"2026-06-21 18:56:54","userRole":"admin"}
+{"database_url":"mongodb+srv://cicadaM10:cicadA1033@cluster0.iyztv4y.mongodb.net/alishan-stock?retryWrites=true&w=majority&appName=Cluster0","level":"info","message":"Connecting to MongoDB...","timestamp":"2026-06-21 18:59:28"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-06-21 18:59:29"}
+{"level":"info","message":"Super admin seeded successfully","timestamp":"2026-06-21 18:59:30"}
+{"level":"info","message":"Balance seeded successfully","timestamp":"2026-06-21 18:59:30"}
+{"frontendUrl":"http://localhost:5173","level":"info","message":"Socket.IO server initialized","timestamp":"2026-06-21 18:59:30","transports":["websocket","polling"]}
+{"env":"development","level":"info","message":"Server listening on port 5000","port":"5000","timestamp":"2026-06-21 18:59:30"}
+{"level":"debug","message":"Socket authenticated","socketId":"yZdyoaddkreGxbaYAAAB","timestamp":"2026-06-21 18:59:32","userId":"68362295a09d72aaa0d871d5","userRole":"admin"}
+{"email":"admin@alishan.com","level":"info","message":"Socket connected","socketId":"yZdyoaddkreGxbaYAAAB","timestamp":"2026-06-21 18:59:32","userId":"68362295a09d72aaa0d871d5","userRole":"admin"}
+{"level":"debug","message":"Socket joined role room","roleRoom":"role:admin","socketId":"yZdyoaddkreGxbaYAAAB","timestamp":"2026-06-21 18:59:32","userRole":"admin"}
+{"database_url":"mongodb+srv://cicadaM10:cicadA1033@cluster0.iyztv4y.mongodb.net/alishan-stock?retryWrites=true&w=majority&appName=Cluster0","level":"info","message":"Connecting to MongoDB...","timestamp":"2026-06-21 19:00:10"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-06-21 19:00:11"}
+{"level":"info","message":"Super admin seeded successfully","timestamp":"2026-06-21 19:00:11"}
+{"level":"info","message":"Balance seeded successfully","timestamp":"2026-06-21 19:00:11"}
+{"frontendUrl":"http://localhost:5173","level":"info","message":"Socket.IO server initialized","timestamp":"2026-06-21 19:00:11","transports":["websocket","polling"]}
+{"env":"development","level":"info","message":"Server listening on port 5000","port":"5000","timestamp":"2026-06-21 19:00:11"}
+{"level":"debug","message":"Socket authenticated","socketId":"rSUe0BJxjENE6dalAAAB","timestamp":"2026-06-21 19:00:12","userId":"68362295a09d72aaa0d871d5","userRole":"admin"}
+{"email":"admin@alishan.com","level":"info","message":"Socket connected","socketId":"rSUe0BJxjENE6dalAAAB","timestamp":"2026-06-21 19:00:12","userId":"68362295a09d72aaa0d871d5","userRole":"admin"}
+{"level":"debug","message":"Socket joined role room","roleRoom":"role:admin","socketId":"rSUe0BJxjENE6dalAAAB","timestamp":"2026-06-21 19:00:12","userRole":"admin"}
+{"database_url":"mongodb+srv://cicadaM10:cicadA1033@cluster0.iyztv4y.mongodb.net/alishan-stock?retryWrites=true&w=majority&appName=Cluster0","level":"info","message":"Connecting to MongoDB...","timestamp":"2026-06-21 20:03:26"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-06-21 20:03:27"}
+{"level":"info","message":"Super admin seeded successfully","timestamp":"2026-06-21 20:03:27"}
+{"level":"info","message":"Balance seeded successfully","timestamp":"2026-06-21 20:03:27"}
+{"frontendUrl":"http://localhost:5173","level":"info","message":"Socket.IO server initialized","timestamp":"2026-06-21 20:03:27","transports":["websocket","polling"]}
+{"env":"development","level":"info","message":"Server listening on port 5000","port":"5000","timestamp":"2026-06-21 20:03:27"}
+{"level":"debug","message":"Socket authenticated","socketId":"LLVlz2_g4Wl_PZmxAAAB","timestamp":"2026-06-21 20:03:28","userId":"68362295a09d72aaa0d871d5","userRole":"admin"}
+{"email":"admin@alishan.com","level":"info","message":"Socket connected","socketId":"LLVlz2_g4Wl_PZmxAAAB","timestamp":"2026-06-21 20:03:28","userId":"68362295a09d72aaa0d871d5","userRole":"admin"}
+{"level":"debug","message":"Socket joined role room","roleRoom":"role:admin","socketId":"LLVlz2_g4Wl_PZmxAAAB","timestamp":"2026-06-21 20:03:28","userRole":"admin"}
+{"database_url":"mongodb+srv://cicadaM10:cicadA1033@cluster0.iyztv4y.mongodb.net/alishan-stock?retryWrites=true&w=majority&appName=Cluster0","level":"info","message":"Connecting to MongoDB...","timestamp":"2026-06-21 20:07:02"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-06-21 20:07:02"}
+{"level":"info","message":"Super admin seeded successfully","timestamp":"2026-06-21 20:07:03"}
+{"level":"info","message":"Balance seeded successfully","timestamp":"2026-06-21 20:07:03"}
+{"frontendUrl":"http://localhost:5173","level":"info","message":"Socket.IO server initialized","timestamp":"2026-06-21 20:07:03","transports":["websocket","polling"]}
+{"env":"development","level":"info","message":"Server listening on port 5000","port":"5000","timestamp":"2026-06-21 20:07:03"}
+{"level":"debug","message":"Socket authenticated","socketId":"I6gkaZQG5rNoH-htAAAB","timestamp":"2026-06-21 20:07:03","userId":"68362295a09d72aaa0d871d5","userRole":"admin"}
+{"email":"admin@alishan.com","level":"info","message":"Socket connected","socketId":"I6gkaZQG5rNoH-htAAAB","timestamp":"2026-06-21 20:07:03","userId":"68362295a09d72aaa0d871d5","userRole":"admin"}
+{"level":"debug","message":"Socket joined role room","roleRoom":"role:admin","socketId":"I6gkaZQG5rNoH-htAAAB","timestamp":"2026-06-21 20:07:03","userRole":"admin"}
+{"database_url":"mongodb+srv://cicadaM10:cicadA1033@cluster0.iyztv4y.mongodb.net/alishan-stock?retryWrites=true&w=majority&appName=Cluster0","level":"info","message":"Connecting to MongoDB...","timestamp":"2026-06-21 20:07:12"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-06-21 20:07:17"}
+{"level":"info","message":"Super admin seeded successfully","timestamp":"2026-06-21 20:07:18"}
+{"level":"info","message":"Balance seeded successfully","timestamp":"2026-06-21 20:07:18"}
+{"frontendUrl":"http://localhost:5173","level":"info","message":"Socket.IO server initialized","timestamp":"2026-06-21 20:07:18","transports":["websocket","polling"]}
+{"env":"development","level":"info","message":"Server listening on port 5000","port":"5000","timestamp":"2026-06-21 20:07:18"}
+{"level":"debug","message":"Socket authenticated","socketId":"Lb9s9E8CRrl7n9hhAAAB","timestamp":"2026-06-21 20:07:18","userId":"68362295a09d72aaa0d871d5","userRole":"admin"}
+{"email":"admin@alishan.com","level":"info","message":"Socket connected","socketId":"Lb9s9E8CRrl7n9hhAAAB","timestamp":"2026-06-21 20:07:18","userId":"68362295a09d72aaa0d871d5","userRole":"admin"}
+{"level":"debug","message":"Socket joined role room","roleRoom":"role:admin","socketId":"Lb9s9E8CRrl7n9hhAAAB","timestamp":"2026-06-21 20:07:18","userRole":"admin"}
+{"database_url":"mongodb+srv://cicadaM10:cicadA1033@cluster0.iyztv4y.mongodb.net/alishan-stock?retryWrites=true&w=majority&appName=Cluster0","level":"info","message":"Connecting to MongoDB...","timestamp":"2026-06-21 20:07:25"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-06-21 20:07:26"}
+{"level":"info","message":"Super admin seeded successfully","timestamp":"2026-06-21 20:07:26"}
+{"level":"info","message":"Balance seeded successfully","timestamp":"2026-06-21 20:07:26"}
+{"frontendUrl":"http://localhost:5173","level":"info","message":"Socket.IO server initialized","timestamp":"2026-06-21 20:07:26","transports":["websocket","polling"]}
+{"env":"development","level":"info","message":"Server listening on port 5000","port":"5000","timestamp":"2026-06-21 20:07:26"}
+{"level":"debug","message":"Socket authenticated","socketId":"6p-PzndNinZNT8JsAAAB","timestamp":"2026-06-21 20:07:26","userId":"68362295a09d72aaa0d871d5","userRole":"admin"}
+{"email":"admin@alishan.com","level":"info","message":"Socket connected","socketId":"6p-PzndNinZNT8JsAAAB","timestamp":"2026-06-21 20:07:26","userId":"68362295a09d72aaa0d871d5","userRole":"admin"}
+{"level":"debug","message":"Socket joined role room","roleRoom":"role:admin","socketId":"6p-PzndNinZNT8JsAAAB","timestamp":"2026-06-21 20:07:26","userRole":"admin"}
+{"database_url":"mongodb+srv://cicadaM10:cicadA1033@cluster0.iyztv4y.mongodb.net/alishan-stock?retryWrites=true&w=majority&appName=Cluster0","level":"info","message":"Connecting to MongoDB...","timestamp":"2026-06-21 20:24:45"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-06-21 20:24:46"}
+{"level":"info","message":"Super admin seeded successfully","timestamp":"2026-06-21 20:24:47"}
+{"level":"info","message":"Balance seeded successfully","timestamp":"2026-06-21 20:24:47"}
+{"frontendUrl":"http://localhost:5173","level":"info","message":"Socket.IO server initialized","timestamp":"2026-06-21 20:24:47","transports":["websocket","polling"]}
+{"env":"development","level":"info","message":"Server listening on port 5000","port":"5000","timestamp":"2026-06-21 20:24:47"}
+{"level":"debug","message":"Socket authenticated","socketId":"BlWf4H1H0W2V--0SAAAB","timestamp":"2026-06-21 20:24:50","userId":"68362295a09d72aaa0d871d5","userRole":"admin"}
+{"email":"admin@alishan.com","level":"info","message":"Socket connected","socketId":"BlWf4H1H0W2V--0SAAAB","timestamp":"2026-06-21 20:24:50","userId":"68362295a09d72aaa0d871d5","userRole":"admin"}
+{"level":"debug","message":"Socket joined role room","roleRoom":"role:admin","socketId":"BlWf4H1H0W2V--0SAAAB","timestamp":"2026-06-21 20:24:50","userRole":"admin"}
+{"database_url":"mongodb+srv://cicadaM10:cicadA1033@cluster0.iyztv4y.mongodb.net/alishan-stock?retryWrites=true&w=majority&appName=Cluster0","level":"info","message":"Connecting to MongoDB...","timestamp":"2026-06-21 20:26:51"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-06-21 20:26:52"}
+{"level":"info","message":"Super admin seeded successfully","timestamp":"2026-06-21 20:26:53"}
+{"level":"info","message":"Balance seeded successfully","timestamp":"2026-06-21 20:26:53"}
+{"frontendUrl":"http://localhost:5173","level":"info","message":"Socket.IO server initialized","timestamp":"2026-06-21 20:26:53","transports":["websocket","polling"]}
+{"env":"development","level":"info","message":"Server listening on port 5000","port":"5000","timestamp":"2026-06-21 20:26:53"}
+{"level":"debug","message":"Socket authenticated","socketId":"bM5-06z3JfQ1oN9JAAAB","timestamp":"2026-06-21 20:26:53","userId":"68362295a09d72aaa0d871d5","userRole":"admin"}
+{"email":"admin@alishan.com","level":"info","message":"Socket connected","socketId":"bM5-06z3JfQ1oN9JAAAB","timestamp":"2026-06-21 20:26:53","userId":"68362295a09d72aaa0d871d5","userRole":"admin"}
+{"level":"debug","message":"Socket joined role room","roleRoom":"role:admin","socketId":"bM5-06z3JfQ1oN9JAAAB","timestamp":"2026-06-21 20:26:53","userRole":"admin"}
+{"database_url":"mongodb+srv://cicadaM10:cicadA1033@cluster0.iyztv4y.mongodb.net/alishan-stock?retryWrites=true&w=majority&appName=Cluster0","level":"info","message":"Connecting to MongoDB...","timestamp":"2026-06-21 20:29:46"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-06-21 20:29:46"}
+{"database_url":"mongodb+srv://cicadaM10:cicadA1033@cluster0.iyztv4y.mongodb.net/alishan-stock?retryWrites=true&w=majority&appName=Cluster0","level":"info","message":"Connecting to MongoDB...","timestamp":"2026-06-21 20:29:49"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-06-21 20:29:49"}
+{"level":"info","message":"Super admin seeded successfully","timestamp":"2026-06-21 20:29:50"}
+{"level":"info","message":"Balance seeded successfully","timestamp":"2026-06-21 20:29:50"}
+{"frontendUrl":"http://localhost:5173","level":"info","message":"Socket.IO server initialized","timestamp":"2026-06-21 20:29:50","transports":["websocket","polling"]}
+{"env":"development","level":"info","message":"Server listening on port 5000","port":"5000","timestamp":"2026-06-21 20:29:50"}
+{"level":"debug","message":"Socket authenticated","socketId":"uOnYZEmFwPpPonZjAAAB","timestamp":"2026-06-21 20:29:53","userId":"68362295a09d72aaa0d871d5","userRole":"admin"}
+{"email":"admin@alishan.com","level":"info","message":"Socket connected","socketId":"uOnYZEmFwPpPonZjAAAB","timestamp":"2026-06-21 20:29:53","userId":"68362295a09d72aaa0d871d5","userRole":"admin"}
+{"level":"debug","message":"Socket joined role room","roleRoom":"role:admin","socketId":"uOnYZEmFwPpPonZjAAAB","timestamp":"2026-06-21 20:29:53","userRole":"admin"}
+{"database_url":"mongodb+srv://cicadaM10:cicadA1033@cluster0.iyztv4y.mongodb.net/alishan-stock?retryWrites=true&w=majority&appName=Cluster0","level":"info","message":"Connecting to MongoDB...","timestamp":"2026-06-21 20:30:03"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-06-21 20:30:04"}
+{"level":"info","message":"Super admin seeded successfully","timestamp":"2026-06-21 20:30:04"}
+{"level":"info","message":"Balance seeded successfully","timestamp":"2026-06-21 20:30:04"}
+{"frontendUrl":"http://localhost:5173","level":"info","message":"Socket.IO server initialized","timestamp":"2026-06-21 20:30:04","transports":["websocket","polling"]}
+{"env":"development","level":"info","message":"Server listening on port 5000","port":"5000","timestamp":"2026-06-21 20:30:04"}
+{"database_url":"mongodb+srv://cicadaM10:cicadA1033@cluster0.iyztv4y.mongodb.net/alishan-stock?retryWrites=true&w=majority&appName=Cluster0","level":"info","message":"Connecting to MongoDB...","timestamp":"2026-06-21 20:30:11"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-06-21 20:30:12"}
+{"level":"info","message":"Super admin seeded successfully","timestamp":"2026-06-21 20:30:12"}
+{"level":"info","message":"Balance seeded successfully","timestamp":"2026-06-21 20:30:12"}
+{"frontendUrl":"http://localhost:5173","level":"info","message":"Socket.IO server initialized","timestamp":"2026-06-21 20:30:12","transports":["websocket","polling"]}
+{"env":"development","level":"info","message":"Server listening on port 5000","port":"5000","timestamp":"2026-06-21 20:30:12"}
+{"level":"debug","message":"Socket authenticated","socketId":"wcxGcffhDXuauX8bAAAB","timestamp":"2026-06-21 20:30:13","userId":"68362295a09d72aaa0d871d5","userRole":"admin"}
+{"email":"admin@alishan.com","level":"info","message":"Socket connected","socketId":"wcxGcffhDXuauX8bAAAB","timestamp":"2026-06-21 20:30:13","userId":"68362295a09d72aaa0d871d5","userRole":"admin"}
+{"level":"debug","message":"Socket joined role room","roleRoom":"role:admin","socketId":"wcxGcffhDXuauX8bAAAB","timestamp":"2026-06-21 20:30:13","userRole":"admin"}
+{"database_url":"mongodb+srv://cicadaM10:cicadA1033@cluster0.iyztv4y.mongodb.net/alishan-stock?retryWrites=true&w=majority&appName=Cluster0","level":"info","message":"Connecting to MongoDB...","timestamp":"2026-06-21 20:30:17"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-06-21 20:30:18"}
+{"level":"info","message":"Super admin seeded successfully","timestamp":"2026-06-21 20:30:18"}
+{"level":"info","message":"Balance seeded successfully","timestamp":"2026-06-21 20:30:18"}
+{"frontendUrl":"http://localhost:5173","level":"info","message":"Socket.IO server initialized","timestamp":"2026-06-21 20:30:18","transports":["websocket","polling"]}
+{"env":"development","level":"info","message":"Server listening on port 5000","port":"5000","timestamp":"2026-06-21 20:30:18"}
+{"level":"debug","message":"Socket authenticated","socketId":"s-y57jZyzfUz5r2IAAAB","timestamp":"2026-06-21 20:30:19","userId":"68362295a09d72aaa0d871d5","userRole":"admin"}
+{"email":"admin@alishan.com","level":"info","message":"Socket connected","socketId":"s-y57jZyzfUz5r2IAAAB","timestamp":"2026-06-21 20:30:19","userId":"68362295a09d72aaa0d871d5","userRole":"admin"}
+{"level":"debug","message":"Socket joined role room","roleRoom":"role:admin","socketId":"s-y57jZyzfUz5r2IAAAB","timestamp":"2026-06-21 20:30:19","userRole":"admin"}
+{"database_url":"mongodb+srv://cicadaM10:cicadA1033@cluster0.iyztv4y.mongodb.net/alishan-stock?retryWrites=true&w=majority&appName=Cluster0","level":"info","message":"Connecting to MongoDB...","timestamp":"2026-06-21 20:31:32"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-06-21 20:31:33"}
+{"level":"info","message":"Super admin seeded successfully","timestamp":"2026-06-21 20:31:34"}
+{"level":"info","message":"Balance seeded successfully","timestamp":"2026-06-21 20:31:34"}
+{"frontendUrl":"http://localhost:5173","level":"info","message":"Socket.IO server initialized","timestamp":"2026-06-21 20:31:34","transports":["websocket","polling"]}
+{"env":"development","level":"info","message":"Server listening on port 5000","port":"5000","timestamp":"2026-06-21 20:31:34"}
+{"level":"debug","message":"Socket authenticated","socketId":"HeL8S1OiGCqURfBqAAAB","timestamp":"2026-06-21 20:31:36","userId":"68362295a09d72aaa0d871d5","userRole":"admin"}
+{"email":"admin@alishan.com","level":"info","message":"Socket connected","socketId":"HeL8S1OiGCqURfBqAAAB","timestamp":"2026-06-21 20:31:36","userId":"68362295a09d72aaa0d871d5","userRole":"admin"}
+{"level":"debug","message":"Socket joined role room","roleRoom":"role:admin","socketId":"HeL8S1OiGCqURfBqAAAB","timestamp":"2026-06-21 20:31:36","userRole":"admin"}
+{"database_url":"mongodb+srv://cicadaM10:cicadA1033@cluster0.iyztv4y.mongodb.net/alishan-stock?retryWrites=true&w=majority&appName=Cluster0","level":"info","message":"Connecting to MongoDB...","timestamp":"2026-06-21 20:31:45"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-06-21 20:31:45"}
+{"level":"info","message":"Super admin seeded successfully","timestamp":"2026-06-21 20:31:46"}
+{"level":"info","message":"Balance seeded successfully","timestamp":"2026-06-21 20:31:46"}
+{"frontendUrl":"http://localhost:5173","level":"info","message":"Socket.IO server initialized","timestamp":"2026-06-21 20:31:46","transports":["websocket","polling"]}
+{"env":"development","level":"info","message":"Server listening on port 5000","port":"5000","timestamp":"2026-06-21 20:31:46"}
+{"database_url":"mongodb+srv://cicadaM10:cicadA1033@cluster0.iyztv4y.mongodb.net/alishan-stock?retryWrites=true&w=majority&appName=Cluster0","level":"info","message":"Connecting to MongoDB...","timestamp":"2026-06-21 20:31:54"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-06-21 20:31:55"}
+{"level":"info","message":"Super admin seeded successfully","timestamp":"2026-06-21 20:31:56"}
+{"level":"info","message":"Balance seeded successfully","timestamp":"2026-06-21 20:31:56"}
+{"frontendUrl":"http://localhost:5173","level":"info","message":"Socket.IO server initialized","timestamp":"2026-06-21 20:31:56","transports":["websocket","polling"]}
+{"env":"development","level":"info","message":"Server listening on port 5000","port":"5000","timestamp":"2026-06-21 20:31:56"}
+{"level":"debug","message":"Socket authenticated","socketId":"VqM6cn0HDOGpndXCAAAB","timestamp":"2026-06-21 20:32:01","userId":"68362295a09d72aaa0d871d5","userRole":"admin"}
+{"email":"admin@alishan.com","level":"info","message":"Socket connected","socketId":"VqM6cn0HDOGpndXCAAAB","timestamp":"2026-06-21 20:32:01","userId":"68362295a09d72aaa0d871d5","userRole":"admin"}
+{"level":"debug","message":"Socket joined role room","roleRoom":"role:admin","socketId":"VqM6cn0HDOGpndXCAAAB","timestamp":"2026-06-21 20:32:01","userRole":"admin"}
+{"database_url":"mongodb+srv://cicadaM10:cicadA1033@cluster0.iyztv4y.mongodb.net/alishan-stock?retryWrites=true&w=majority&appName=Cluster0","level":"info","message":"Connecting to MongoDB...","timestamp":"2026-06-21 20:35:58"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-06-21 20:35:59"}
+{"level":"info","message":"Super admin seeded successfully","timestamp":"2026-06-21 20:35:59"}
+{"level":"info","message":"Balance seeded successfully","timestamp":"2026-06-21 20:35:59"}
+{"frontendUrl":"http://localhost:5173","level":"info","message":"Socket.IO server initialized","timestamp":"2026-06-21 20:35:59","transports":["websocket","polling"]}
+{"env":"development","level":"info","message":"Server listening on port 5000","port":"5000","timestamp":"2026-06-21 20:35:59"}
+{"level":"debug","message":"Socket authenticated","socketId":"6JHWqtuX3rer9s-sAAAB","timestamp":"2026-06-21 20:36:01","userId":"68362295a09d72aaa0d871d5","userRole":"admin"}
+{"email":"admin@alishan.com","level":"info","message":"Socket connected","socketId":"6JHWqtuX3rer9s-sAAAB","timestamp":"2026-06-21 20:36:01","userId":"68362295a09d72aaa0d871d5","userRole":"admin"}
+{"level":"debug","message":"Socket joined role room","roleRoom":"role:admin","socketId":"6JHWqtuX3rer9s-sAAAB","timestamp":"2026-06-21 20:36:01","userRole":"admin"}

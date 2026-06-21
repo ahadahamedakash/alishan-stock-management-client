@@ -4,6 +4,7 @@ import { USER_ROLE } from "../user/user.constant";
 import { ProductControllers } from "./product.controller";
 import { authMiddleware } from "../../middlewares/authMiddleware";
 import { ProductValidation } from "../../validation/product.validation";
+import { auditLogger } from "../../middlewares/auditLogger";
 
 import validateRequest from "../../middlewares/validateRequest";
 
@@ -13,6 +14,7 @@ const router = express.Router();
 router.post(
   "/create-product",
   authMiddleware(USER_ROLE.super_admin, USER_ROLE.admin),
+  auditLogger('PRODUCT_CREATE', 'Product'),
   validateRequest(ProductValidation.createProductZodSchema),
   ProductControllers.createProduct
 );
@@ -21,6 +23,7 @@ router.post(
 router.patch(
   "/edit-product/:id",
   authMiddleware(USER_ROLE.super_admin, USER_ROLE.admin),
+  auditLogger('PRODUCT_UPDATE', 'Product'),
   validateRequest(ProductValidation.editProductZodSchema),
   ProductControllers.editProduct
 );
@@ -29,6 +32,7 @@ router.patch(
 router.delete(
   "/delete-product/:id",
   authMiddleware(USER_ROLE.super_admin, USER_ROLE.admin),
+  auditLogger('PRODUCT_DELETE', 'Product'),
   ProductControllers.deleteProduct
 );
 

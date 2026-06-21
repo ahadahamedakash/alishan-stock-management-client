@@ -3,6 +3,7 @@ import { Router } from "express";
 import { AuthRoutes } from "../modules/auth/auth.route";
 import { UserRoutes } from "../modules/user/user.route";
 import { StockRoutes } from "../modules/stock/stock.route";
+import { auditRoutes } from "../modules/audit/audit.route";
 import { InvoiceRoutes } from "../modules/invoice/invoice.route";
 import { ProductRoutes } from "../modules/product/product.route";
 import { ExpenseRoutes } from "../modules/expense/expense.route";
@@ -18,6 +19,10 @@ const moduleRoutes = [
   {
     path: "/analytics",
     route: AnalyticsRoutes,
+  },
+  {
+    path: "/audit",
+    route: auditRoutes,
   },
   {
     path: "/collections",

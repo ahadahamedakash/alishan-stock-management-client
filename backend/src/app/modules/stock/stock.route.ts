@@ -4,6 +4,7 @@ import { USER_ROLE } from "../user/user.constant";
 import { StockControllers } from "./stock.controller";
 import { authMiddleware } from "../../middlewares/authMiddleware";
 import { StockValidation } from "../../validation/stock.validation";
+import { auditLogger } from "../../middlewares/auditLogger";
 
 import validateRequest from "../../middlewares/validateRequest";
 
@@ -17,6 +18,7 @@ router.post(
     USER_ROLE.admin,
     USER_ROLE.stock_manager
   ),
+  auditLogger('STOCK_ADD', 'Stock'),
   validateRequest(StockValidation.addStockZodSchema),
   StockControllers.addStock
 );
@@ -29,6 +31,7 @@ router.post(
     USER_ROLE.admin,
     USER_ROLE.stock_manager
   ),
+  auditLogger('STOCK_DEDUCT', 'Stock'),
   validateRequest(StockValidation.deductStockZodSchema),
   StockControllers.deductStockByInvoice
 );

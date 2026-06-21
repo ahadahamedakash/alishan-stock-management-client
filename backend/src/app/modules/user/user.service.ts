@@ -13,6 +13,8 @@ import {
 } from "../../socket";
 import { getUserName } from "../../socket/helpers";
 
+import logger from "../../config/logger";
+
 const createUser = async (userData: IUser, issuedBy: string) => {
   try {
     // Check if the email already exists
@@ -24,7 +26,7 @@ const createUser = async (userData: IUser, issuedBy: string) => {
     // Hash the password before saving
     const hashedPassword = await bcrypt.hash(
       userData.password,
-      parseInt(config.bcrypt_salt_rounds, 10)
+      parseInt(config.bcrypt_salt_rounds, 10),
     );
 
     // Replace the plain password with the hashed password
@@ -52,21 +54,23 @@ const createUser = async (userData: IUser, issuedBy: string) => {
       };
 
       // Emit user created event to all admins
-      emitToRoles(['admin'], SERVER_EVENTS.USER_CREATED, userData);
+      emitToRoles(["admin"], SERVER_EVENTS.USER_CREATED, userData);
 
       // Also emit as notification
       emitNotification(
-        ['admin'],
+        ["admin"],
         NOTIFICATION_TYPES.USER,
         NOTIFICATION_PRIORITY.LOW,
         {
-          title: 'New User Created',
+          title: "New User Created",
           message: `${savedUser.name} joined as ${savedUser.role}`,
           details: userData,
-        }
+        },
       );
     } catch (socketError) {
-      console.error('Failed to emit socket event:', socketError);
+      logger.error("Failed to emit socket event for user created", {
+        error: socketError,
+      });
     }
 
     return savedUser;
@@ -135,14 +139,14 @@ const updateUserById = async (userId: string, updateData: Partial<IUser>) => {
 const resetUserPassword = async (userId: string, newPassword: string) => {
   try {
     const user = await User.findOne({ _id: userId, isDeleted: false });
-    
+
     if (!user) {
       throw new Error("User not found");
     }
 
     const hashedPassword = await bcrypt.hash(
       newPassword,
-      parseInt(config.bcrypt_salt_rounds, 10)
+      parseInt(config.bcrypt_salt_rounds, 10),
     );
 
     user.password = hashedPassword;
@@ -162,5 +166,5 @@ export const UserServices = {
   getUserById,
   deleteUserById,
   updateUserById,
-  resetUserPassword
+  resetUserPassword,
 };

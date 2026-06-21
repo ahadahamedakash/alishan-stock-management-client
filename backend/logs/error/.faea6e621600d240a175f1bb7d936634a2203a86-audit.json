@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "/media/ahad/drive6/bootcamp/alishan-stock-management-client/backend/logs/error/.faea6e621600d240a175f1bb7d936634a2203a86-audit.json",
+    "files": [
+        {
+            "date": 1782045725603,
+            "name": "/media/ahad/drive6/bootcamp/alishan-stock-management-client/backend/logs/error/error-2026-06-21.log",
+            "hash": "71306807df1ef2ba6fac6540c8504fa325ea230af8c9c60373f04077b102bf13"
+        }
+    ],
+    "hashType": "sha256"
+}

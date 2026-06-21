@@ -13,6 +13,7 @@ import {
   createNotificationPayload,
 } from "./events";
 import { User } from "../modules/user/user.model";
+import logger from "../config/logger";
 
 // Re-export constants for easier importing
 export {
@@ -31,7 +32,7 @@ let io: SocketIOServer | null = null;
  */
 export const initializeSocket = (httpServer: HTTPServer): SocketIOServer => {
   if (io) {
-    console.log("⚠️ Socket.IO already initialized");
+    logger.warn('Socket.IO already initialized');
     return io;
   }
 
@@ -74,9 +75,15 @@ export const initializeSocket = (httpServer: HTTPServer): SocketIOServer => {
       socket.userRole = decoded.role;
       socket.email = decoded.email;
 
+      logger.debug('Socket authenticated', {
+        socketId: socket.id,
+        userId: socket.userId,
+        userRole: socket.userRole,
+      });
+
       next();
     } catch (error) {
-      console.error("Socket authentication error:", error);
+      logger.error('Socket authentication error', { error });
       next(new Error("Authentication error: Invalid token"));
     }
   });
@@ -88,10 +95,13 @@ export const initializeSocket = (httpServer: HTTPServer): SocketIOServer => {
 
   // Global error handler
   io.on("error", (error) => {
-    console.error("Socket.IO error:", error);
+    logger.error('Socket.IO error', { error });
   });
 
-  console.log("📡 Socket.IO server initialized");
+  logger.info('Socket.IO server initialized', {
+    frontendUrl,
+    transports: ['websocket', 'polling'],
+  });
   return io;
 };
 
@@ -112,9 +122,9 @@ export const emitToUser = (userId: string, event: string, data: any): void => {
   try {
     const io = getIO();
     io.to(`${ROOMS.USER_PREFIX}${userId}`).emit(event, data);
-    console.log(`📤 Socket: Emitting to user ${userId}:`, event);
+    logger.debug('Socket emitting to user', { userId, event });
   } catch (error) {
-    console.error('Failed to emit to user:', error);
+    logger.error('Failed to emit to user', { error, userId, event });
   }
 };
 
@@ -127,12 +137,12 @@ export const emitToRole = (role: string, event: string, data: any): void => {
     const roleRoom = getRoleRoom(role);
     if (roleRoom) {
       io.to(roleRoom).emit(event, data);
-      console.log(`📤 Socket: Emitting to role ${role} (${roleRoom}):`, event);
+      logger.debug('Socket emitting to role', { role, roleRoom, event });
     } else {
-      console.warn(`⚠️ No room found for role: ${role}`);
+      logger.warn('No room found for role', { role });
     }
   } catch (error) {
-    console.error('Failed to emit to role:', error);
+    logger.error('Failed to emit to role', { error, role, event });
   }
 };
 
@@ -144,7 +154,7 @@ export const emitToRoles = (
   event: string,
   data: any,
 ): void => {
-  console.log(`📤 Socket: Emitting to roles [${roles.join(', ')}]:`, event);
+  logger.debug('Socket emitting to roles', { roles, event });
   roles.forEach((role) => emitToRole(role, event, data));
 };
 
@@ -160,10 +170,10 @@ export const emitNotification = (
 ): void => {
   try {
     const notification = createNotificationPayload(type, priority, data);
-    console.log(`📤 Socket: Emitting notification to [${targetRoles.join(', ')}]`, notification);
+    logger.debug('Socket emitting notification', { targetRoles, type, priority });
     emitToRoles(targetRoles, SERVER_EVENTS.NOTIFICATION, notification);
   } catch (error) {
-    console.error('Failed to emit notification:', error);
+    logger.error('Failed to emit notification', { error, targetRoles, type });
   }
 };
 

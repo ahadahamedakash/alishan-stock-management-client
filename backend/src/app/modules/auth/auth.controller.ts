@@ -1,6 +1,8 @@
 import { Request, Response } from "express";
 
 import { AuthService } from "./auth.service";
+import { createAuthAuditLog } from "../../middlewares/auditLogger";
+import logger from "../../config/logger";
 
 const loginUser = async (req: Request, res: Response) => {
   try {
@@ -14,6 +16,21 @@ const loginUser = async (req: Request, res: Response) => {
       maxAge: 365 * 24 * 60 * 60 * 1000,
     });
 
+    // Log successful login
+    await createAuthAuditLog(
+      req,
+      'LOGIN',
+      req.body.email,
+      result.userId || 'unknown',
+      userRole
+    );
+
+    logger.info('User logged in successfully', {
+      email: req.body.email,
+      userRole,
+      requestId: req.id,
+    });
+
     res.status(200).json({
       success: true,
       message: "Logged in successfully!",
@@ -24,7 +41,24 @@ const loginUser = async (req: Request, res: Response) => {
     if (error instanceof Error) {
       errorMessage = error.message;
     }
-    res.status(500).json({
+
+    // Log failed login attempt
+    await createAuthAuditLog(
+      req,
+      'LOGIN_FAILED',
+      req.body.email,
+      undefined,
+      undefined,
+      errorMessage
+    );
+
+    logger.warn('Failed login attempt', {
+      email: req.body.email,
+      error: errorMessage,
+      requestId: req.id,
+    });
+
+    res.status(401).json({
       success: false,
       message: "Failed to login",
       error: errorMessage,

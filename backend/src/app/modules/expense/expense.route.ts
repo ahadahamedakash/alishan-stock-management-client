@@ -4,6 +4,7 @@ import { USER_ROLE } from "../user/user.constant";
 import { ExpenseControllers } from "./expense.controller";
 import { authMiddleware } from "../../middlewares/authMiddleware";
 import { ExpenseValidation } from "../../validation/expense.validation";
+import { auditLogger } from "../../middlewares/auditLogger";
 
 import validateRequest from "../../middlewares/validateRequest";
 
@@ -13,6 +14,7 @@ const router = express.Router();
 router.post(
   "/add-expense",
   authMiddleware(USER_ROLE.super_admin, USER_ROLE.admin, USER_ROLE.accountant),
+  auditLogger('EXPENSE_CREATE', 'Expense'),
   validateRequest(ExpenseValidation.createExpenseZodSchema),
   ExpenseControllers.addExpense
 );
@@ -21,6 +23,7 @@ router.post(
 router.patch(
   "/edit-expense/:id",
   authMiddleware(USER_ROLE.super_admin, USER_ROLE.admin, USER_ROLE.accountant),
+  auditLogger('EXPENSE_UPDATE', 'Expense'),
   validateRequest(ExpenseValidation.editExpenseZodSchema),
   ExpenseControllers.editExpense
 );
@@ -29,6 +32,7 @@ router.patch(
 router.delete(
   "/delete-expense/:id",
   authMiddleware(USER_ROLE.super_admin, USER_ROLE.admin, USER_ROLE.accountant),
+  auditLogger('EXPENSE_DELETE', 'Expense'),
   ExpenseControllers.deleteExpense
 );
 

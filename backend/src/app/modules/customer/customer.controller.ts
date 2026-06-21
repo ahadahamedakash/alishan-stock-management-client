@@ -32,8 +32,8 @@ const editCustomer = async (req: Request, res: Response) => {
     const customerData = req.body;
 
     const updatedCustomer = await CustomerServices.editCustomer(
-      customerId,
-      customerData
+      customerId as string,
+      customerData,
     );
 
     res.status(200).json({
@@ -59,7 +59,7 @@ const deleteCustomer = async (req: Request, res: Response) => {
   try {
     const customerId = req.params.id;
 
-    await CustomerServices.deleteCustomer(customerId);
+    await CustomerServices.deleteCustomer(customerId as string);
 
     res.status(200).json({
       success: true,
@@ -106,7 +106,9 @@ const getCustomerById = async (req: Request, res: Response) => {
   try {
     const customerId = req.params.id;
 
-    const customer = await CustomerServices.getCustomerById(customerId);
+    const customer = await CustomerServices.getCustomerById(
+      customerId as string,
+    );
 
     res.status(200).json({
       success: true,

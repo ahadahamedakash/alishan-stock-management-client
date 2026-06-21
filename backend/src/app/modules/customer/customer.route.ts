@@ -1,6 +1,7 @@
 import express from "express";
 
 import { USER_ROLE } from "../user/user.constant";
+import { auditLogger } from "../../middlewares/auditLogger";
 import { CustomerControllers } from "./customer.controller";
 import { authMiddleware } from "../../middlewares/authMiddleware";
 import { CustomerValidation } from "../../validation/customer.validation";
@@ -13,37 +14,40 @@ const router = express.Router();
 router.post(
   "/create-customer",
   authMiddleware(USER_ROLE.super_admin, USER_ROLE.admin, USER_ROLE.accountant),
+  auditLogger("CUSTOMER_CREATE", "Customer"),
   validateRequest(CustomerValidation.createCustomerZodSchema),
-  CustomerControllers.createCustomer
+  CustomerControllers.createCustomer,
 );
 
 // EDIT A CUSTOMER
 router.patch(
   "/edit-customer/:id",
   authMiddleware(USER_ROLE.super_admin, USER_ROLE.admin, USER_ROLE.accountant),
+  auditLogger("CUSTOMER_UPDATE", "Customer"),
   validateRequest(CustomerValidation.editCustomerZodSchema),
-  CustomerControllers.editCustomer
+  CustomerControllers.editCustomer,
 );
 
 // DELETE A CUSTOMER
 router.delete(
   "/delete-customer/:id",
   authMiddleware(USER_ROLE.super_admin, USER_ROLE.admin, USER_ROLE.accountant),
-  CustomerControllers.deleteCustomer
+  auditLogger("CUSTOMER_DELETE", "Customer"),
+  CustomerControllers.deleteCustomer,
 );
 
 // GET ALL CUSTOMER
 router.get(
   "/get-all-customer",
   authMiddleware(USER_ROLE.super_admin, USER_ROLE.admin, USER_ROLE.accountant),
-  CustomerControllers.getCustomers
+  CustomerControllers.getCustomers,
 );
 
 // GET A CUSTOMER BY ID
 router.get(
   "/get-single-customer/:id",
   authMiddleware(USER_ROLE.super_admin, USER_ROLE.admin, USER_ROLE.accountant),
-  CustomerControllers.getCustomerById
+  CustomerControllers.getCustomerById,
 );
 
 export const CustomerRoutes = router;

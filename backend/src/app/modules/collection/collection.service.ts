@@ -12,6 +12,8 @@ import {
 } from "../../socket";
 import { getUserName } from "../../socket/helpers";
 
+import logger from "../../config/logger";
+
 const createCollection = async (data: ICollection, issuedBy: string) => {
   try {
     const { customerId, amount } = data;
@@ -49,7 +51,7 @@ const createCollection = async (data: ICollection, issuedBy: string) => {
           currentBalance: amount,
           totalUnPaid: -amount,
         },
-      }
+      },
     );
 
     // Emit real-time notification for collection created
@@ -61,7 +63,7 @@ const createCollection = async (data: ICollection, issuedBy: string) => {
         customerId: customer._id.toString(),
         customerName: customer.name,
         amount,
-        paymentMethod: data.method || 'cash',
+        paymentMethod: data.method || "cash",
         description: data.description,
         createdBy: issuedBy,
         userName,
@@ -69,21 +71,27 @@ const createCollection = async (data: ICollection, issuedBy: string) => {
       };
 
       // Emit collection created event to admin and accountant
-      emitToRoles(['admin', 'accountant'], SERVER_EVENTS.COLLECTION_CREATED, collectionData);
+      emitToRoles(
+        ["admin", "accountant"],
+        SERVER_EVENTS.COLLECTION_CREATED,
+        collectionData,
+      );
 
       // Also emit as notification
       emitNotification(
-        ['admin', 'accountant'],
+        ["admin", "accountant"],
         NOTIFICATION_TYPES.COLLECTION,
         NOTIFICATION_PRIORITY.MEDIUM,
         {
-          title: 'Payment Received',
+          title: "Payment Received",
           message: `৳${amount} from ${customer.name}`,
           details: collectionData,
-        }
+        },
       );
     } catch (socketError) {
-      console.error('Failed to emit socket event:', socketError);
+      logger.error("Failed to emit socket event for collection created", {
+        error: socketError,
+      });
     }
 
     return savedCollection;

@@ -4,6 +4,7 @@ import { USER_ROLE } from "./user.constant";
 import { UserControllers } from "./user.controller";
 import { authMiddleware } from "../../middlewares/authMiddleware";
 import { UserValidation } from "../../validation/user.validation";
+import { auditLogger } from "../../middlewares/auditLogger";
 
 import validateRequest from "../../middlewares/validateRequest";
 
@@ -13,6 +14,7 @@ const router = express.Router();
 router.post(
   "/create-user",
   authMiddleware(USER_ROLE.super_admin, USER_ROLE.admin),
+  auditLogger('USER_CREATE', 'User'),
   validateRequest(UserValidation.createUserZodSchema),
   UserControllers.createUser
 );
@@ -40,6 +42,7 @@ router.get(
 router.delete(
   "/delete-user/:id",
   authMiddleware(USER_ROLE.super_admin, USER_ROLE.admin),
+  auditLogger('USER_DELETE', 'User'),
   UserControllers.deleteUserById
 );
 
@@ -52,6 +55,7 @@ router.patch(
     USER_ROLE.accountant,
     USER_ROLE.stock_manager
   ),
+  auditLogger('USER_UPDATE', 'User'),
   UserControllers.updateUserById
 );
 

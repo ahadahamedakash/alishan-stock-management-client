@@ -2,6 +2,7 @@ import express from "express";
 
 import { USER_ROLE } from "../user/user.constant";
 
+import { auditLogger } from "../../middlewares/auditLogger";
 import { CollectionControllers } from "./collection.controller";
 import { authMiddleware } from "../../middlewares/authMiddleware";
 import { CollectionValidation } from "../../validation/collection.validation";
@@ -14,15 +15,16 @@ const router = express.Router();
 router.post(
   "/create-collection",
   authMiddleware(USER_ROLE.super_admin, USER_ROLE.admin, USER_ROLE.accountant),
+  auditLogger("COLLECTION_CREATE", "Collection"),
   validateRequest(CollectionValidation.createCollectionValidationSchema),
-  CollectionControllers.createCollection
+  CollectionControllers.createCollection,
 );
 
 // GET ALL COLLECTION
 router.get(
   "/get-collection-history",
   authMiddleware(USER_ROLE.super_admin, USER_ROLE.admin, USER_ROLE.accountant),
-  CollectionControllers.getCollection
+  CollectionControllers.getCollection,
 );
 
 export const CollectionRoutes = router;

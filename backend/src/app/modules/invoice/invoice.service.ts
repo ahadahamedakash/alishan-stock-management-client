@@ -16,6 +16,7 @@ import {
   NOTIFICATION_PRIORITY,
 } from "../../socket";
 import { getUserName } from "../../socket/helpers";
+import logger from "../../config/logger";
 
 const createInvoice = async (invoiceData: IInvoice, issuedBy: string) => {
   const session = await mongoose.startSession();
@@ -120,7 +121,7 @@ const createInvoice = async (invoiceData: IInvoice, issuedBy: string) => {
         }
       );
     } catch (socketError) {
-      console.error('Failed to emit socket event:', socketError);
+      logger.error('Failed to emit socket event for invoice created', { error: socketError });
     }
 
     return populatedInvoice;

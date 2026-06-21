@@ -14,6 +14,7 @@ import {
   NOTIFICATION_PRIORITY,
 } from "../../socket";
 import { getUserName } from "../../socket/helpers";
+import logger from "../../config/logger";
 
 const addStock = async (
   productId: string,
@@ -35,9 +36,16 @@ const addStock = async (
     issuedBy: new Types.ObjectId(issuedBy),
   } as IStock);
 
+  logger.info('Stock added', {
+    productId,
+    productName: product.name,
+    quantity,
+    newStock: product.stock,
+    issuedBy,
+  });
+
   // Emit real-time notification for stock added
   try {
-    console.log('🔧 [Stock Service] Preparing socket emit for stock added...');
     const userName = await getUserName(issuedBy);
 
     const stockData = {
@@ -53,7 +61,6 @@ const addStock = async (
       timestamp: new Date(),
     };
 
-    console.log('📤 [Stock Service] Calling emitToRoles for admin and stock-manager');
     // Emit stock added event to admin and stock manager
     emitToRoles(['admin', 'stock-manager'], SERVER_EVENTS.STOCK_ADDED, stockData);
 
@@ -69,7 +76,7 @@ const addStock = async (
       }
     );
   } catch (socketError) {
-    console.error('❌ [Stock Service] Failed to emit socket event:', socketError);
+    logger.error('Failed to emit socket event for stock added', { error: socketError });
   }
 
   return product;
@@ -155,7 +162,7 @@ const deductStockByInvoice = async (
         // Emit stock deducted event to admin and stock manager
         emitToRoles(['admin', 'stock-manager'], SERVER_EVENTS.STOCK_DEDUCTED, stockData);
       } catch (socketError) {
-        console.error('Failed to emit socket event:', socketError);
+        logger.error('Failed to emit socket event for stock deducted', { error: socketError });
       }
     }
 
@@ -202,7 +209,7 @@ const deductStockByInvoice = async (
         });
       }
     } catch (socketError) {
-      console.error('Failed to emit invoice socket event:', socketError);
+      logger.error('Failed to emit invoice socket event', { error: socketError });
     }
 
     return invoice;

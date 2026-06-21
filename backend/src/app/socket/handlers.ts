@@ -2,6 +2,7 @@
 import { Socket } from 'socket.io';
 import { Server as SocketIOServer } from 'socket.io';
 import { SERVER_EVENTS, CLIENT_EVENTS, ROOMS } from './events';
+import logger from '../config/logger';
 
 // Extended Socket interface with user properties
 export interface AuthenticatedSocket extends Socket {
@@ -19,7 +20,12 @@ export interface AuthenticatedSocket extends Socket {
 export const handleConnection = (io: SocketIOServer, socket: AuthenticatedSocket) => {
   const { userId, userRole, email } = socket;
 
-  console.log(`✅ Socket connected: ${email} (${userRole})`);
+  logger.info('Socket connected', {
+    socketId: socket.id,
+    email,
+    userRole,
+    userId,
+  });
 
   // Join user-specific room (for personal notifications)
   socket.join(`${ROOMS.USER_PREFIX}${userId}`);
@@ -28,6 +34,7 @@ export const handleConnection = (io: SocketIOServer, socket: AuthenticatedSocket
   const roleRoom = getRoleRoom(userRole);
   if (roleRoom) {
     socket.join(roleRoom);
+    logger.debug('Socket joined role room', { socketId: socket.id, roleRoom, userRole });
   }
 
   // Notify others about presence
@@ -57,7 +64,11 @@ export const handleConnection = (io: SocketIOServer, socket: AuthenticatedSocket
  * - Notify others about user going offline
  */
 export const handleDisconnect = (_io: SocketIOServer, socket: AuthenticatedSocket) => {
-  console.log(`❌ Socket disconnected: ${socket.email}`);
+  logger.info('Socket disconnected', {
+    socketId: socket.id,
+    email: socket.email,
+    userRole: socket.userRole,
+  });
 
   // Notify others about disconnect
   socket.broadcast.emit(SERVER_EVENTS.PRESENCE_VIEWER, {
@@ -96,7 +107,7 @@ const setupClientEventHandlers = (io: SocketIOServer, socket: AuthenticatedSocke
       timestamp: new Date(),
     });
 
-    console.log(`📱 User ${socket.email} joined room: ${room}`);
+    logger.debug('Socket joined room', { socketId: socket.id, email, room });
   });
 
   // Leave presence room
@@ -120,7 +131,7 @@ const setupClientEventHandlers = (io: SocketIOServer, socket: AuthenticatedSocke
       timestamp: new Date(),
     });
 
-    console.log(`📤 User ${socket.email} left room: ${room}`);
+    logger.debug('Socket left room', { socketId: socket.id, email, room });
   });
 
   // Typing indicator (for future comments/notes feature)
